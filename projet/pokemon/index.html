@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="./assets/js/script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Liste Pokemon</h1>
+    </header>
+    <main>
+        <div class="affichage">
+            <div class="menufieldset">
+                <fieldset>
+                    <legend>Selection de Pokemon</legend>
+                        <div class="organisation">
+                            <input type="radio" type="checkbox" name="listepokemon" value="nom" id="liste" checked >
+                            <label for="liste">Par Nom</label>
+                        
+                        
+                            <input type="radio" type="checkbox" name="listepokemon" value="attribut" id="attr" >
+                            <label for="attr">Par Attribut</label>
+                        </div>
+                        <div class="selection">
+                            <select>
+                                <option>Selectionner un Pokemon</option>
+                            </select>
+                        </div>
+                    </fieldset>
+            </div>
+            
+            <label id="caract">Pour Connaitre les caractéristique de : </label>
+                <div class="stats">
+                    <h2>Stats</h2>
+                </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
+

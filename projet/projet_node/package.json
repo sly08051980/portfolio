@@ -1,0 +1,16 @@
+{
+    "name": "monorepo",
+    "private": true,
+    "scripts": {
+      "start": "concurrently \"npm start --prefix api_pokemon/exo-apipokemonchallenge\" \"npm start --prefix api_pokemon/pokemon\""
+    },
+    "workspaces": [
+      "api_pokemon/exo-apipokemonchallenge",
+      "api_pokemon/pokemon",
+      "projet3"
+    ],
+    "devDependencies": {
+      "concurrently": "^9.1.2"
+    }
+  }
+  

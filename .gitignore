@@ -1,0 +1,8 @@
+projet/chatbot-entretien/intents/*
+
+projet/chatbot-entretien/questions.json
+
+projet/chatbot-entretien/embeddings.npy
+
+
+projet/projet_node/node_modules/

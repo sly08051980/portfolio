@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+
+    
+    background: url(../image/pokemon.jpg) no-repeat center center fixed;
+    
+    -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+ text-align: center;
+
+}
+header{
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+h1{
+    color:yellow;
+    font-size: 50px;
+    font-weight: bold;
+}
+main{
+
+
+width: 100%;
+height: 600px;
+display: flex;
+justify-content: center;
+
+}
+.stats img {
+    width: 50%;
+}
+.affichage{
+   border-radius: 5%;
+    background-color:   rgba(6, 61, 68, 0.7);
+   width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    
+
+}
+select{
+    background-color:   rgba(6, 61, 68, 0.7);
+    font-size: 20px;
+    font-weight: bolder;
+    width: 30%;
+    text-align: center;
+    color: white;
+}
+.selection{
+    text-align: center;
+}
+
+.stats{
+    display: flex;
+justify-content: space-around;
+align-items: center;
+}
+p{
+    color: white;
+    padding-bottom: 1em;
+    font-size: 25px;
+    border: 1px black solid;
+    border-radius: 15%;
+
+  
+    
+}
+label{
+    padding-top: 2em;
+    color: white;
+}
+
+p:hover {
+    background-color: green;
+  }
+  fieldset{
+ 
+   width: 50%;
+ 
+  }
+  .menufieldset{
+    display: flex;
+   justify-content: center;
+  }
+  .attr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+ 
+  }
+  .attribut{
+ 
+  }
+  img{
+    background-color: black;
+    border-radius: 50%;
+    border-style: inset;
+    box-shadow: 10px 5px 5px red;
+   
+  }
+
+  @media screen and (max-width: 600px) {
+    /* Réduction de la taille de la police pour les paragraphes */
+    p {
+      font-size: 16px; /* Ajustez la valeur selon vos besoins */
+    }
+  
+    /* Adaptation de la largeur de l'encadré pour qu'il s'adapte à l'écran */
+    .affichage {
+      width: 90%;
+      margin: 0 auto; /* Centrer l'encadré */
+      padding: 10px; /* Optionnel pour un peu d'espace intérieur */
+    }
+  }
+  
