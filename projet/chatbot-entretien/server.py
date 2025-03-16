@@ -9,7 +9,8 @@ from tqdm import tqdm
 import gc
 from fastapi.staticfiles import StaticFiles
 from datetime import datetime
-
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
 EMBEDDINGS_FILE = "embeddings.npy"
 QUESTIONS_FILE = "questions.json"
@@ -96,9 +97,10 @@ class QuestionRequest(BaseModel):
     question: str
     user_token: str
 
-@app.get("/")
-def read_root():
-    return {"message": "Bienvenue sur le Chatbot d'entretien professionnel"}
+@app.get("/", response_class=HTMLResponse)
+async def read_root():
+    with open("static/index.html", "r", encoding="utf-8") as file:
+        return HTMLResponse(content=file.read(), status_code=200)
 
 @app.post("/handle_message")
 async def handle_message(request: Request):
