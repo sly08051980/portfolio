@@ -108,7 +108,7 @@ class QuestionRequest(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"message": "Bienvenue sur le Chatbot d'entretien professionnel"}
+    return {"message": "Bienvenue "}
 
 
 @app.post("/handle_message")
