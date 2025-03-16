@@ -9,14 +9,14 @@ from tqdm import tqdm
 import gc
 from fastapi.staticfiles import StaticFiles
 
-# 📌 Fichiers d'apprentissage
+
 EMBEDDINGS_FILE = "embeddings.npy"
 QUESTIONS_FILE = "questions.json"
 
-# Télécharger les données nécessaires de NLTK
+
 nltk.download('punkt')
 
-# 📥 Chargement du modèle NLP
+
 print("📥 Chargement du modèle NLP...")
 try:
     model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
@@ -24,7 +24,7 @@ except:
     print("⚠️ Erreur avec 'paraphrase-MiniLM-L6-v2', tentative avec un modèle plus léger...")
     model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# 📌 Chemins des fichiers JSON contenant les questions
+
 json_files = [
     "intents/css.json",
     "intents/employeur.json",
@@ -41,7 +41,7 @@ json_files = [
     "intents/question.json"
 ]
 
-# 🔍 Vérification des fichiers JSON
+
 print("🔍 Vérification des fichiers JSON...")
 database = []
 
@@ -64,7 +64,7 @@ for file_path in json_files:
 
 print(f"\n🔍 {len(database)} questions chargées.")
 
-# 🛠 Vérification si les embeddings existent
+
 if os.path.exists(EMBEDDINGS_FILE) and os.path.exists(QUESTIONS_FILE):
     print(f"\n📂 Chargement des embeddings et des questions depuis {EMBEDDINGS_FILE} et {QUESTIONS_FILE}...")
     questions_embeddings = np.load(EMBEDDINGS_FILE)
@@ -96,22 +96,21 @@ else:
 
 print("\n✅ Tout est prêt, lancement du serveur API...")
 
-# 🚀 Création de l'API FastAPI
+
 app = FastAPI()
 
-# 🎯 Servir les fichiers statiques (HTML, CV)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# 📌 Structure des requêtes API
+
 class QuestionRequest(BaseModel):
     question: str
 
-# 🔥 Route principale
+
 @app.get("/")
 def read_root():
     return {"message": "Bienvenue sur le Chatbot d'entretien professionnel"}
 
-# 🔥 Route pour traiter les messages du chatbot
+
 @app.post("/handle_message")
 async def handle_message(request: Request):
     data = await request.json()
@@ -123,7 +122,7 @@ async def handle_message(request: Request):
     response = find_best_response(user_input)
     return {"question": user_input, "response": response}
 
-# 🎯 Fonction de recherche de réponse
+
 def find_best_response(user_input):
     if not database:
         return "Aucune donnée disponible pour répondre."
