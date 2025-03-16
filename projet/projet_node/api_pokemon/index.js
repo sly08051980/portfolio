@@ -36,8 +36,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/api/pokemon", (req, res) => {
   res.json(jsonPokemon);
 });
-app.listen(port, () => {
-  console.log(`Écoute http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Écoute sur http://0.0.0.0:${port}`);
 });
 
 app.get("/", (req, res) => {
