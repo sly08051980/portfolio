@@ -7,7 +7,7 @@ afficherPokemon();
 let affiche = false;
 
 async function afficherPokemon() {
-  fetch("/pokemonList")
+  fetch("/api/pokemon")
     .then((response) => {
       if (!response.ok) {
         throw new Error("pas d internet");
@@ -60,7 +60,7 @@ function deletePokemon(pokemonId) {
   console.log("click");
   console.log(pokemonId);
 
-  fetch(`/delete/${pokemonId}`, {
+  fetch(`/api/delete/${pokemonId}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -152,7 +152,7 @@ function putPokemon(modifierId,modifierNom,modifierType,modifierImage){
   console.log(modifierNom.value);
   console.log(modifierType.value);
   console.log(modifierImage.value);
-  fetch(`/modifier/${modifierId.value}`, {
+  fetch(`/api/modifier/${modifierId.value}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -181,7 +181,7 @@ function putPokemon(modifierId,modifierNom,modifierType,modifierImage){
     e.preventDefault(); // Empêche la soumission classique
     const nomRecherche = document.getElementById("nomCarte").value.trim();
 
-    fetch(`/cartes?nom=${encodeURIComponent(nomRecherche)}`)
+    fetch(`/api/cartes?nom=${encodeURIComponent(nomRecherche)}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Aucun Pokémon trouvé ou erreur dans la requête");
