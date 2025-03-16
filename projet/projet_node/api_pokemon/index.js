@@ -3,146 +3,95 @@ const app = express();
 const fs = require("fs");
 const bodyParser = require("body-parser");
 const jsonPokemon = require("./pokemonList.json");
-const { log } = require("console");
 
-class CartePokemon {
-  static cartesPokemon = new Map();
-
-  constructor(nom, type, imageSrc) {
-    this.id = jsonPokemon.length + 1;
-    this.nom = nom;
-    this.type = type;
-    this.imageSrc = imageSrc;
-
-    if (CartePokemon.cartesPokemon.has(this.id)) {
-      throw new Error("Une carte avec cet ID existe déjà.");
-    }
-
-    CartePokemon.cartesPokemon.set(this.id, this);
-  }
-
-  static getNextId() {
-    console.log("test", CartePokemon.cartesPokemon.size);
-    return CartePokemon.cartesPokemon.size + 1;
-  }
-}
-
-const port = 3000;
-app.use(express.static("public"));
+// Servir les fichiers statiques (HTML, CSS, JS)
+app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// API : Récupérer tous les Pokémon
 app.get("/api/pokemon", (req, res) => {
   res.json(jsonPokemon);
 });
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Écoute sur http://0.0.0.0:${port}`);
-});
 
+// Servir `index.html` si l'utilisateur va sur `/`
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/pokemonList", (req, res) => {
-  res.sendFile(__dirname + "/pokemonList.json");
-});
-
-app.get("/cartes", (req, res) => {
+// Récupérer un Pokémon par son nom
+app.get("/api/cartes", (req, res) => {
   const nom = req.query.nom;
   if (!nom) {
-    return res.status(400).json({ erreur: "saisir un nom " });
+    return res.status(400).json({ erreur: "Saisir un nom" });
   }
   const pokemonChoisi = jsonPokemon.find((pokemon) => pokemon.nom === nom);
   if (pokemonChoisi) {
     res.json(pokemonChoisi);
   } else {
-    res.status(404).json({ erreur: `${nom} n est pas un pokemon valide` });
+    res.status(404).json({ erreur: `${nom} n'est pas un Pokémon valide` });
   }
 });
-app.put("/modifier/:id",(req,res)=>{
-  const putID=parseInt(req.params.id);
-  const putNom =req.body.nom;
-  const putType=req.body.type;
+
+// Modifier un Pokémon
+app.put("/api/modifier/:id", (req, res) => {
+  const putID = parseInt(req.params.id);
+  const putNom = req.body.nom;
+  const putType = req.body.type;
   const putImage = req.body.image;
 
-  console.log(putID);
-  console.log(putNom);
-  console.log(putType);
-  console.log(putImage);
   const modifierId = jsonPokemon.findIndex(item => item.id === putID);
-  console.log("modifier : ",modifierId);
-  
   if (modifierId !== -1) {
     jsonPokemon[modifierId].nom = putNom;
     jsonPokemon[modifierId].type = putType;
     jsonPokemon[modifierId].image = putImage;
 
-    console.log("ok");
-    res.json({ success: true, message: 'ok' });
-    fs.writeFile(
-      "pokemonList.json",
-      JSON.stringify(jsonPokemon),
-      function (err) {
-        if (err) {
-          return console.log(err);
-        }
-      }
-    );
+    fs.writeFile("pokemonList.json", JSON.stringify(jsonPokemon), function (err) {
+      if (err) return console.log(err);
+      res.json({ success: true, message: "Pokémon modifié avec succès" });
+    });
   } else {
-    console.log("Pokemon non trouve avec cet ID.");
-    res.status(404).json({ success: false, message: 'Pokemon non trouve avec cet ID.' });
-  }
-
-})
-app.delete("/delete/:id", (req, res) => {
-  const deleteId = parseInt(req.params.id);
-  console.log(deleteId);
-
-  const suppId = jsonPokemon.findIndex((item) => item.id === deleteId);
-
-  if (suppId !== -1) {
-    jsonPokemon.splice(suppId, 1);
-    console.log(jsonPokemon);
-    fs.writeFile(
-      "pokemonList.json",
-      JSON.stringify(jsonPokemon),
-      function (err) {
-        if (err) {
-          return console.log(err);
-        }
-      }
-    );
-    res.json({ success: true, message: "Pokemon supprime avec succès." });
-  } else {
-    res
-      .status(404)
-      .json({ success: false, message: "Pokemon non trouve avec cet ID." });
+    res.status(404).json({ success: false, message: "Pokémon non trouvé avec cet ID." });
   }
 });
 
-app.post("/cartes", (req, res) => {
+// Supprimer un Pokémon
+app.delete("/api/delete/:id", (req, res) => {
+  const deleteId = parseInt(req.params.id);
+  const suppId = jsonPokemon.findIndex(item => item.id === deleteId);
+
+  if (suppId !== -1) {
+    jsonPokemon.splice(suppId, 1);
+    fs.writeFile("pokemonList.json", JSON.stringify(jsonPokemon), function (err) {
+      if (err) return console.log(err);
+      res.json({ success: true, message: "Pokémon supprimé avec succès." });
+    });
+  } else {
+    res.status(404).json({ success: false, message: "Pokémon non trouvé avec cet ID." });
+  }
+});
+
+// Ajouter un Pokémon
+app.post("/api/cartes", (req, res) => {
   const nom = req.body.nom;
   const type = req.body.type;
   const image = req.body.imageSrc;
 
-  let jsonData = [];
   fs.readFile("pokemonList.json", "utf8", function (err, data) {
-    if (err) {
-      return console.error(err);
-    }
-
-    jsonData = JSON.parse(data);
-
-    const carte = new CartePokemon(nom, type, image);
-    jsonData.push(carte);
+    if (err) return console.error(err);
+    let jsonData = JSON.parse(data);
+    jsonData.push({ id: jsonData.length + 1, nom, type, image });
 
     fs.writeFile("pokemonList.json", JSON.stringify(jsonData), function (err) {
-      if (err) {
-        return console.error(err);
-      }
-      console.log("Fichier ajouté");
+      if (err) return console.error(err);
       res.sendFile(__dirname + "/public/index.html");
     });
   });
+});
+
+// Lancer le serveur
+const port = 3000;
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Écoute sur http://0.0.0.0:${port}`);
 });
