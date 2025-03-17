@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from tqdm import tqdm
 import gc
 from fastapi.staticfiles import StaticFiles
-
+print(f"📂 Répertoire actuel1: {os.getcwd()}")
 
 EMBEDDINGS_FILE = "embeddings.npy"
 QUESTIONS_FILE = "questions.json"
