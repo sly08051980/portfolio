@@ -93,7 +93,8 @@ print("\n✅ Serveur prêt, lancement de l'API...")
 
 app = FastAPI(root_path="/chatbot")
 
-app.mount("/static", StaticFiles(directory="/var/www/regniersylvain/projet/chatbot-entretien/static"), name="static")
+app.mount("/chatbot/static", StaticFiles(directory="/var/www/regniersylvain/projet/chatbot-entretien/static"), name="static")
+
 
 
 class QuestionRequest(BaseModel):
