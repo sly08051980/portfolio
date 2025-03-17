@@ -12,6 +12,8 @@ from datetime import datetime
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
+print(f"📂 Répertoire actuel : {os.getcwd()}")
+
 EMBEDDINGS_FILE = "embeddings.npy"
 QUESTIONS_FILE = "questions.json"
 
