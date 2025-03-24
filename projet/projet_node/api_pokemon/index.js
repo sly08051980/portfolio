@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // API : Récupérer tous les Pokémon
-app.get("/api/pokemon", (req, res) => {
+app.get("/pokemon", (req, res) => {
   res.json(jsonPokemon);
 });
 
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 // Récupérer un Pokémon par son nom
-app.get("/api/cartes", (req, res) => {
+app.get("/cartes", (req, res) => {
   const nom = req.query.nom;
   if (!nom) {
     return res.status(400).json({ erreur: "Saisir un nom" });
@@ -35,7 +35,7 @@ app.get("/api/cartes", (req, res) => {
 });
 
 // Modifier un Pokémon
-app.put("/api/modifier/:id", (req, res) => {
+app.put("/modifier/:id", (req, res) => {
   const putID = parseInt(req.params.id);
   const putNom = req.body.nom;
   const putType = req.body.type;
@@ -57,7 +57,7 @@ app.put("/api/modifier/:id", (req, res) => {
 });
 
 // Supprimer un Pokémon
-app.delete("/api/delete/:id", (req, res) => {
+app.delete("/delete/:id", (req, res) => {
   const deleteId = parseInt(req.params.id);
   const suppId = jsonPokemon.findIndex(item => item.id === deleteId);
 
@@ -73,7 +73,7 @@ app.delete("/api/delete/:id", (req, res) => {
 });
 
 // Ajouter un Pokémon
-app.post("/api/cartes", (req, res) => {
+app.post("/cartes", (req, res) => {
   const nom = req.body.nom;
   const type = req.body.type;
   const image = req.body.imageSrc;
