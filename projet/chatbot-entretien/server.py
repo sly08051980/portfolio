@@ -121,8 +121,9 @@ print("\n✅ Serveur prêt, lancement de l'API...")
 
 app = FastAPI(root_path="/chatbot")
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-app.mount("/documents", StaticFiles(directory="documents"), name="documents")
+app.mount("/chatbot/static", StaticFiles(directory="static"), name="static")
+app.mount("/chatbot/documents", StaticFiles(directory="documents"), name="documents")
+
 
 
 
