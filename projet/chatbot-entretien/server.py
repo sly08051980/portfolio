@@ -2,7 +2,7 @@ import json
 import os
 import nltk
 import numpy as np
-import faiss  # Pour l'indexation et la recherche de similarités
+import faiss  
 from sentence_transformers import SentenceTransformer
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
@@ -10,7 +10,7 @@ from tqdm import tqdm
 import gc
 from fastapi.staticfiles import StaticFiles
 from datetime import datetime
-from sklearn.linear_model import LogisticRegression  # Pour la classification
+from sklearn.linear_model import LogisticRegression  
 
 
 print(f"📂 Répertoire actuel : {os.getcwd()}")
@@ -58,16 +58,16 @@ for file_path in json_files:
             data = json.load(file)
             if "intents" in data and isinstance(data["intents"], list):
                 for intent in data["intents"]:
-                    # Conversion en chaîne puis en minuscules pour chaque champ
+                   
                     tag = str(intent.get("tag", "")).lower()
                     context_set = str(intent.get("context_set", "")).lower()
                     aliases = [str(alias).lower() for alias in intent.get("aliases", [])]
                     patterns = [str(pattern).lower() for pattern in intent.get("patterns", [])]
                     responses = [str(r).lower() for r in intent.get("responses", ["je ne sais pas."])]
                     response = responses[0]
-                    # Combiner patterns et aliases
+                   
                     questions = patterns + aliases
-                    # Créer une entrée par question avec les informations associées
+         
                     for question in questions:
                         database.append({
                             "tag": tag,
@@ -89,7 +89,7 @@ else:
     print("\n🚀 Encodage des données en cours...")
     questions_embeddings = []
     for q in tqdm(database):
-        # Texte d'encodage incluant les infos supplémentaires en minuscules
+     
         text_to_encode = f"{q['question']} [tag: {q['tag']}] [context: {q['context_set']}] [aliases: {', '.join(q['aliases'])}]".lower()
         embedding = model.encode(text_to_encode, convert_to_tensor=False)
         questions_embeddings.append(embedding)
@@ -98,17 +98,17 @@ else:
     with open(QUESTIONS_FILE, "w", encoding="utf-8") as f:
         json.dump(database, f, indent=4, ensure_ascii=False)
 
-# Normalisation des embeddings pour obtenir des vecteurs de norme 1 (pour la similarité cosinus)
+
 norms = np.linalg.norm(questions_embeddings, axis=1, keepdims=True)
 questions_embeddings_norm = questions_embeddings / norms
 
-# Création de l'index FAISS global (pour un fallback général)
-d = questions_embeddings_norm.shape[1]  # Dimension des embeddings
+
+d = questions_embeddings_norm.shape[1]  
 global_index = faiss.IndexFlatIP(d)
 global_index.add(questions_embeddings_norm)
 print(f"\nFAISS index global créé avec {global_index.ntotal} entrées.")
 
-# Entraînement du classifieur sur les tags
+
 tags = [entry["tag"] for entry in database]
 clf = LogisticRegression(max_iter=1000)
 clf.fit(questions_embeddings, tags)
@@ -137,7 +137,7 @@ async def read_root():
 @app.post("/handle_message")
 async def handle_message(request: Request):
     data = await request.json()
-    # Conversion de l'entrée utilisateur en minuscules
+   
     user_input = data.get("message", "").lower()
     user_token = data.get("user_token", "unknown")
     if not user_input:
@@ -184,23 +184,20 @@ def save_chat_message(user_token, question, response, score, tag):
 def find_best_response(user_input):
     if not database:
         return {"response": "Aucune donnée disponible.", "score": 0.0, "doubt": {}, "tag": ""}
-    
-    # Encodage de la requête utilisateur
+
     user_embedding = model.encode(user_input, convert_to_tensor=False)
     user_embedding = np.array(user_embedding, dtype='float32')
     
-    # Normalisation de l'embedding utilisateur
     user_embedding_norm = user_embedding / np.linalg.norm(user_embedding)
     user_embedding_norm = user_embedding_norm.reshape(1, -1)
     
-    # --- Classification ---
     proba = clf.predict_proba(user_embedding.reshape(1, -1))[0]
     predicted_tag = clf.classes_[np.argmax(proba)]
     doubt = {tag: float(prob) for tag, prob in zip(clf.classes_, proba)}
     print(f"Tag prédit: {predicted_tag} avec confiance {max(proba):.2f}")
     print("Distribution des probabilités:", doubt)
     
-    # Filtrer la base de données pour ne garder que les entrées du tag prédit
+
     filtered_indices = [i for i, entry in enumerate(database) if entry["tag"] == predicted_tag]
     
     if filtered_indices:
@@ -212,13 +209,13 @@ def find_best_response(user_input):
         best_match_index = filtered_indices[best_filtered_idx]
         best_match_score = similarities[best_filtered_idx]
         print(f"Score dans le sous-ensemble '{predicted_tag}': {best_match_score:.2f}")
-        if best_match_score > 0.55:  # Seuil ajustable pour le sous-ensemble
+        if best_match_score > 0.55:  
             return {"response": database[best_match_index]["response"],
                     "score": float(best_match_score),
                     "doubt": doubt,
                     "tag": predicted_tag}
     
-    # Fallback : recherche par similarité sur l'index global
+ 
     k = 1
     D, I = global_index.search(user_embedding_norm, k)
     best_match_index = I[0][0]
