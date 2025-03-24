@@ -150,9 +150,7 @@ function verifListChecked(){
     }
 }
 
-/**
- * Génère dynamiquement les options de l'élément <select>
- */
+
 function garnirSelectList() {
     selectList.options.length = 0;
     // document.body.appendChild(listeDeroulante);
@@ -171,7 +169,7 @@ function garnirSelectList() {
 function getPokemonsList () {
     return new Promise((resolve) => {
         return resolve(
-            fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/10", {
+            fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/20", {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json, text/plain, */*',

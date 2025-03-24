@@ -2,15 +2,16 @@ import json
 import os
 import nltk
 import numpy as np
-from sentence_transformers import SentenceTransformer, util
+import faiss  # Pour l'indexation et la recherche de similarités
+from sentence_transformers import SentenceTransformer
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
 from tqdm import tqdm
 import gc
 from fastapi.staticfiles import StaticFiles
 from datetime import datetime
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
+from sklearn.linear_model import LogisticRegression  # Pour la classification
+
 
 print(f"📂 Répertoire actuel : {os.getcwd()}")
 
@@ -57,17 +58,22 @@ for file_path in json_files:
             data = json.load(file)
             if "intents" in data and isinstance(data["intents"], list):
                 for intent in data["intents"]:
-                    response = intent.get("responses", ["Je ne sais pas."])[0]
-              
-                    for pattern in intent.get("patterns", []):
+                    # Conversion en chaîne puis en minuscules pour chaque champ
+                    tag = str(intent.get("tag", "")).lower()
+                    context_set = str(intent.get("context_set", "")).lower()
+                    aliases = [str(alias).lower() for alias in intent.get("aliases", [])]
+                    patterns = [str(pattern).lower() for pattern in intent.get("patterns", [])]
+                    responses = [str(r).lower() for r in intent.get("responses", ["je ne sais pas."])]
+                    response = responses[0]
+                    # Combiner patterns et aliases
+                    questions = patterns + aliases
+                    # Créer une entrée par question avec les informations associées
+                    for question in questions:
                         database.append({
-                            "question": pattern,
-                            "response": response
-                        })
-                  
-                    for alias in intent.get("aliases", []):
-                        database.append({
-                            "question": alias,
+                            "tag": tag,
+                            "context_set": context_set,
+                            "aliases": aliases,
+                            "question": str(question).lower(),
                             "response": response
                         })
 
@@ -81,10 +87,31 @@ if os.path.exists(EMBEDDINGS_FILE) and os.path.exists(QUESTIONS_FILE):
         database = json.load(f)
 else:
     print("\n🚀 Encodage des données en cours...")
-    questions_embeddings = [model.encode(q["question"], convert_to_tensor=False) for q in tqdm(database)]
-    np.save(EMBEDDINGS_FILE, np.array(questions_embeddings))
+    questions_embeddings = []
+    for q in tqdm(database):
+        # Texte d'encodage incluant les infos supplémentaires en minuscules
+        text_to_encode = f"{q['question']} [tag: {q['tag']}] [context: {q['context_set']}] [aliases: {', '.join(q['aliases'])}]".lower()
+        embedding = model.encode(text_to_encode, convert_to_tensor=False)
+        questions_embeddings.append(embedding)
+    questions_embeddings = np.array(questions_embeddings).astype('float32')
+    np.save(EMBEDDINGS_FILE, questions_embeddings)
     with open(QUESTIONS_FILE, "w", encoding="utf-8") as f:
-        json.dump(database, f, indent=4)
+        json.dump(database, f, indent=4, ensure_ascii=False)
+
+# Normalisation des embeddings pour obtenir des vecteurs de norme 1 (pour la similarité cosinus)
+norms = np.linalg.norm(questions_embeddings, axis=1, keepdims=True)
+questions_embeddings_norm = questions_embeddings / norms
+
+# Création de l'index FAISS global (pour un fallback général)
+d = questions_embeddings_norm.shape[1]  # Dimension des embeddings
+global_index = faiss.IndexFlatIP(d)
+global_index.add(questions_embeddings_norm)
+print(f"\nFAISS index global créé avec {global_index.ntotal} entrées.")
+
+# Entraînement du classifieur sur les tags
+tags = [entry["tag"] for entry in database]
+clf = LogisticRegression(max_iter=1000)
+clf.fit(questions_embeddings, tags)
 
 gc.collect()
 
@@ -110,23 +137,19 @@ async def read_root():
 @app.post("/handle_message")
 async def handle_message(request: Request):
     data = await request.json()
-    user_input = data.get("message", "")
+    # Conversion de l'entrée utilisateur en minuscules
+    user_input = data.get("message", "").lower()
     user_token = data.get("user_token", "unknown")
-
     if not user_input:
         return {"response": "Veuillez entrer une question valide."}
-
- 
     result = find_best_response(user_input)
     response_text = result["response"]
     score = result["score"]
+    tag = result.get("tag", "")
+    save_chat_message(user_token, user_input, response_text, score, tag)
+    return {"question": user_input, "response": response_text, "score": score, "tag": tag, "doubt": result.get("doubt", {})}
 
-
-    save_chat_message(user_token, user_input, response_text, score)
-
-    return {"question": user_input, "response": response_text, "score": score}
-
-def save_chat_message(user_token, question, response, score):
+def save_chat_message(user_token, question, response, score, tag):
 
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     chat_data = {
@@ -134,7 +157,8 @@ def save_chat_message(user_token, question, response, score):
         "timestamp": timestamp,
         "question": question,
         "response": response,
-        "score": score
+        "score": score,
+        "tag": tag 
     }
     
     if user_token not in session_files:
@@ -155,23 +179,61 @@ def save_chat_message(user_token, question, response, score):
                 chat_history = []
             chat_history.append(chat_data)
             f.seek(0)
-            json.dump(chat_history, f, indent=4)
+            json.dump(chat_history, f, indent=4, ensure_ascii=False)
 
 def find_best_response(user_input):
     if not database:
-        return {"response": "Aucune donnée disponible.", "score": 0.0}
-
+        return {"response": "Aucune donnée disponible.", "score": 0.0, "doubt": {}, "tag": ""}
+    
+    # Encodage de la requête utilisateur
     user_embedding = model.encode(user_input, convert_to_tensor=False)
-   
-    scores = util.pytorch_cos_sim(np.array(user_embedding), np.array(questions_embeddings))[0]
-    best_match_index = scores.argmax().item()
-    best_match_score = scores[best_match_index].item()
-
-   
+    user_embedding = np.array(user_embedding, dtype='float32')
+    
+    # Normalisation de l'embedding utilisateur
+    user_embedding_norm = user_embedding / np.linalg.norm(user_embedding)
+    user_embedding_norm = user_embedding_norm.reshape(1, -1)
+    
+    # --- Classification ---
+    proba = clf.predict_proba(user_embedding.reshape(1, -1))[0]
+    predicted_tag = clf.classes_[np.argmax(proba)]
+    doubt = {tag: float(prob) for tag, prob in zip(clf.classes_, proba)}
+    print(f"Tag prédit: {predicted_tag} avec confiance {max(proba):.2f}")
+    print("Distribution des probabilités:", doubt)
+    
+    # Filtrer la base de données pour ne garder que les entrées du tag prédit
+    filtered_indices = [i for i, entry in enumerate(database) if entry["tag"] == predicted_tag]
+    
+    if filtered_indices:
+        similarities = []
+        for i in filtered_indices:
+            sim = np.dot(questions_embeddings_norm[i], user_embedding_norm[0])
+            similarities.append(sim)
+        best_filtered_idx = np.argmax(similarities)
+        best_match_index = filtered_indices[best_filtered_idx]
+        best_match_score = similarities[best_filtered_idx]
+        print(f"Score dans le sous-ensemble '{predicted_tag}': {best_match_score:.2f}")
+        if best_match_score > 0.55:  # Seuil ajustable pour le sous-ensemble
+            return {"response": database[best_match_index]["response"],
+                    "score": float(best_match_score),
+                    "doubt": doubt,
+                    "tag": predicted_tag}
+    
+    # Fallback : recherche par similarité sur l'index global
+    k = 1
+    D, I = global_index.search(user_embedding_norm, k)
+    best_match_index = I[0][0]
+    best_match_score = D[0][0]
+    print(f"Score global: {best_match_score:.2f}")
     if best_match_score > 0.6:
-        return {"response": database[best_match_index]["response"], "score": best_match_score}
+        return {"response": database[best_match_index]["response"],
+                "score": float(best_match_score),
+                "doubt": doubt,
+                "tag": predicted_tag}
     else:
-        return {"response": "Désolé, réponse inconnue.", "score": best_match_score}
+        return {"response": "Désolé, je n'ai pas encore appris.",
+                "score": float(best_match_score),
+                "doubt": doubt,
+                "tag": predicted_tag}
 
-# 🚀 Démarrer le serveur avec :
+# Pour démarrer le serveur
 # uvicorn server:app --reload
