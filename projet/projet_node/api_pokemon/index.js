@@ -4,24 +4,22 @@ const fs = require("fs");
 const bodyParser = require("body-parser");
 const jsonPokemon = require("./pokemonList.json");
 
-// Servir les fichiers statiques (HTML, CSS, JS)
+// Middleware
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// API : Récupérer tous les Pokémon
-app.get("/pokemon", (req, res) => {
+// Créer un router avec toutes les routes API
+const apiRouter = express.Router();
+
+// GET all Pokémon
+apiRouter.get("/pokemon", (req, res) => {
   res.json(jsonPokemon);
 });
 
-// Servir `index.html` si l'utilisateur va sur `/`
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
-});
-
-// Récupérer un Pokémon par son nom
-app.get("/cartes", (req, res) => {
+// GET Pokémon by name
+apiRouter.get("/cartes", (req, res) => {
   const nom = req.query.nom;
   if (!nom) {
     return res.status(400).json({ erreur: "Saisir un nom" });
@@ -35,7 +33,7 @@ app.get("/cartes", (req, res) => {
 });
 
 // Modifier un Pokémon
-app.put("/modifier/:id", (req, res) => {
+apiRouter.put("/modifier/:id", (req, res) => {
   const putID = parseInt(req.params.id);
   const putNom = req.body.nom;
   const putType = req.body.type;
@@ -57,7 +55,7 @@ app.put("/modifier/:id", (req, res) => {
 });
 
 // Supprimer un Pokémon
-app.delete("/delete/:id", (req, res) => {
+apiRouter.delete("/delete/:id", (req, res) => {
   const deleteId = parseInt(req.params.id);
   const suppId = jsonPokemon.findIndex(item => item.id === deleteId);
 
@@ -73,7 +71,7 @@ app.delete("/delete/:id", (req, res) => {
 });
 
 // Ajouter un Pokémon
-app.post("/cartes", (req, res) => {
+apiRouter.post("/cartes", (req, res) => {
   const nom = req.body.nom;
   const type = req.body.type;
   const image = req.body.imageSrc;
@@ -90,8 +88,16 @@ app.post("/cartes", (req, res) => {
   });
 });
 
-// Lancer le serveur
+// Monter le router sous le préfixe /api
+app.use("/api", apiRouter);
+
+// Page d'accueil
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
+// Démarrage du serveur
 const port = 3000;
 app.listen(port, "0.0.0.0", () => {
-  console.log(`Écoute sur http://0.0.0.0:${port}`);
+  console.log(`✅ API dispo sur http://localhost:${port}/api/pokemon`);
 });
