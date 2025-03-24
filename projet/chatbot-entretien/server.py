@@ -11,6 +11,7 @@ import gc
 from fastapi.staticfiles import StaticFiles
 from datetime import datetime
 from sklearn.linear_model import LogisticRegression  
+from fastapi.responses import HTMLResponse
 
 
 print(f"📂 Répertoire actuel : {os.getcwd()}")
