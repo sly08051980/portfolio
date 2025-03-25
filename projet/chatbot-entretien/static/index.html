@@ -177,21 +177,23 @@
         <script>
             $(document).ready(function() {
                 let chatHistory = [];
-                let userToken = localStorage.getItem("userToken");
-                let micEnabled = false;
                 let isSpeaking = false;
+                let micEnabled = false;
             
+                // Génération / récupération du token utilisateur
+                let userToken = localStorage.getItem("userToken");
                 if (!userToken) {
                     userToken = 'user_' + Math.random().toString(36).substr(2, 12);
                     localStorage.setItem("userToken", userToken);
                 }
             
-                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-                recognition.lang = "fr-FR";
-                recognition.continuous = true;
-                recognition.interimResults = false;
+                // Toggle chat visibility
+                $('#chat-toggle').click(function() {
+                    $('#chat-content').slideToggle();
+                    $(this).text($('#chat-content').is(":visible") ? "❌ Fermer le Chat" : "💬 Ouvrir le Chat");
+                });
             
-                // Toggle micro
+                // Toggle microphone
                 $('#mic-toggle').click(function() {
                     micEnabled = !micEnabled;
                     if (micEnabled) {
@@ -205,16 +207,59 @@
                     }
                 });
             
-                recognition.addEventListener("result", (event) => {
+                // Send message handlers
+                $('#send-button').click(sendMessage);
+                $('#user-input').keypress(e => { if (e.which === 13) sendMessage(); });
+            
+                function sendMessage(message = null) {
+                    const text = message || $('#user-input').val().trim();
+                    if (!text) return;
+                    $('#chat-messages').append(`<div class="message">${text}</div><br>`);
+                    $('#user-input').val('');
+                    $.ajax({
+                        url: '/chatbot/handle_message',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ message: text, user_token: userToken }),
+                        success: function(data) {
+                            const botResponse = data.response;
+                            $('#chat-messages').append(`<div class="message received">${botResponse}</div><br>`);
+                            $('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
+                            chatHistory.push({ question: text, response: botResponse });
+                            saveChatHistory();
+                            isSpeaking = true;
+                            recognition.abort();
+            
+                            const utterance = new SpeechSynthesisUtterance(botResponse);
+                            utterance.lang = "fr-FR";
+                            utterance.onend = () => {
+                                isSpeaking = false;
+                                if (micEnabled) recognition.start();
+                            };
+                            speechSynthesis.speak(utterance);
+                        }
+                    });
+                }
+            
+                function saveChatHistory() {
+                    $.ajax({
+                        url: '/save_chat',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ user_token: userToken, chat: chatHistory })
+                    });
+                }
+            
+                // Initialize SpeechRecognition
+                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.lang = "fr-FR";
+                recognition.continuous = true;
+                recognition.interimResults = false;
+            
+                recognition.addEventListener("result", event => {
                     if (isSpeaking || !micEnabled) return;
                     const transcript = event.results[event.results.length - 1][0].transcript.trim();
                     if (transcript) sendMessage(transcript);
-                });
-            
-                recognition.addEventListener("error", (e) => {
-                    $('#voice-status').text('❌ Erreur micro');
-                    micEnabled = false;
-                    $('#mic-toggle').text('🎤 Activer le micro');
                 });
             
                 recognition.addEventListener("end", () => {
@@ -224,38 +269,16 @@
                     }
                 });
             
-                $('#chat-toggle').click(function() {
-                    $('#chat-content').slideToggle();
-                    $(this).text($('#chat-content').is(":visible") ? "❌ Fermer le Chat" : "💬 Ouvrir le Chat");
+                recognition.addEventListener("error", event => {
+                    console.error("SpeechRecognition error:", event.error);
+                    micEnabled = false;
+                    $('#mic-toggle').text('🎤 Activer le micro');
+                    $('#voice-status').text('❌ Erreur micro');
                 });
             
-                $('#send-button').click(sendMessage);
-                $('#user-input').keypress(e => { if (e.which == 13) sendMessage(); });
-            
-                function sendMessage(text = null) {
-                    let message = text || $('#user-input').val().trim();
-                    if (!message) return;
-                    $('#chat-messages').append(`<div class="message">${message}</div><br>`);
-                    $('#user-input').val('');
-                    $.post('/chatbot/handle_message',
-                           JSON.stringify({ message, user_token: userToken }),
-                           data => {
-                               const botResp = data.response;
-                               $('#chat-messages').append(`<div class="message received">${botResp}</div><br>`);
-                               $('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
-                               chatHistory.push({ question: message, response: botResp });
-                               saveChatHistory();
-                               isSpeaking = true;
-                               recognition.abort();
-                               let utter = new SpeechSynthesisUtterance(botResp);
-                               utter.lang = "fr-FR";
-                               utter.onend = () => { isSpeaking = false; if(micEnabled) recognition.start(); };
-                               speechSynthesis.speak(utter);
-                           }, 'json');
-                }
-            
-                function saveChatHistory() {
-                    $.post('/save_chat', JSON.stringify({ user_token: userToken, chat: chatHistory }));
+                // Ensure user grants microphone permission up front
+                if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                    navigator.mediaDevices.getUserMedia({ audio: true }).catch(err => console.error("Accès micro refusé:", err));
                 }
             });
             </script>
