@@ -206,7 +206,7 @@
                 $('#user-input').val('');
         
                 $.ajax({
-                    url: '/handle_message',
+                    url: '/chatbot/handle_message',
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify({ message: text, user_token: userToken }),
