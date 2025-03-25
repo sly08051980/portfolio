@@ -116,6 +116,9 @@
                 <button id="chat-toggle">💬 Ouvrir le Chat</button>
                 <div id="chat-content">
                     <div id="voice-status">🎤 Micro activé</div>
+                    <button id="mic-toggle" class="btn btn-sm btn-outline-secondary mt-2">
+                        🎤 Activer le micro
+                      </button>
                     <div id="chat-messages"></div>
                     <div id="chat-input">
                         <input type="text" id="user-input" placeholder="Écrivez un message...">
@@ -171,123 +174,92 @@
           </div>
     
         </footer>
-<script>
-    $(document).ready(function() {
-        let chatHistory = [];
-        let userToken = localStorage.getItem("userToken");
-    
-        if (!userToken) {
-            userToken = 'user_' + Math.random().toString(36).substr(2, 12);
-            localStorage.setItem("userToken", userToken);
-        }
-        
-        // Flag pour indiquer si le bot est en train de parler
-        let isSpeaking = false;
-        
-        $('#chat-toggle').click(function() {
-            $('#chat-content').slideToggle();
-            let buttonText = $('#chat-content').is(":visible") ? "❌ Fermer le Chat" : "💬 Ouvrir le Chat";
-            $('#chat-toggle').text(buttonText);
-        });
-        
-        $('#send-button').click(function() {
-            sendMessage();
-        });
-        
-        $('#user-input').keypress(function(e) {
-            if (e.which == 13) {
-                sendMessage();
-            }
-        });
-        
-        function sendMessage(message = null) {
-            var text = message || $('#user-input').val();
-            if (text.trim() !== '') {
-                $('#chat-messages').append('<div class="message">' + text + '</div><br>');
-                $('#user-input').val('');
-        
-                $.ajax({
-                    url: '/chatbot/handle_message',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({ message: text, user_token: userToken }),
-                    success: function(data) {
-                        let botResponse = data.response;
-                        $('#chat-messages').append('<div class="message received">' + botResponse + '</div><br>');
-                        $('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
-                        chatHistory.push({ question: text, response: botResponse });
-                        saveChatHistory(userToken, chatHistory);
-        
-                        // Couper le micro dès que la réponse est trouvée
-                        isSpeaking = true;
+        <script>
+            $(document).ready(function() {
+                let chatHistory = [];
+                let userToken = localStorage.getItem("userToken");
+                let micEnabled = false;
+                let isSpeaking = false;
+            
+                if (!userToken) {
+                    userToken = 'user_' + Math.random().toString(36).substr(2, 12);
+                    localStorage.setItem("userToken", userToken);
+                }
+            
+                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.lang = "fr-FR";
+                recognition.continuous = true;
+                recognition.interimResults = false;
+            
+                // Toggle micro
+                $('#mic-toggle').click(function() {
+                    micEnabled = !micEnabled;
+                    if (micEnabled) {
+                        recognition.start();
+                        $('#mic-toggle').text('🚫 Désactiver le micro');
+                        $('#voice-status').text('🎤 Micro activé');
+                    } else {
                         recognition.abort();
-        
-                        const utterance = new SpeechSynthesisUtterance(botResponse);
-                        utterance.lang = "fr-FR";
-                        // Réactiver le micro une fois que le bot a fini de parler
-                        utterance.onend = function() {
-                            isSpeaking = false;
-                            recognition.start();
-                        };
-                        speechSynthesis.speak(utterance);
+                        $('#mic-toggle').text('🎤 Activer le micro');
+                        $('#voice-status').text('🔇 Micro désactivé');
                     }
                 });
-            }
-        }
-        
-        function saveChatHistory(userToken, history) {
-            $.ajax({
-                url: '/save_chat',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({ user_token: userToken, chat: history }),
-                success: function(response) {
-                    console.log("Chat sauvegardé :", response.message);
-                },
-                error: function(xhr) {
-                    console.error("Erreur sauvegarde JSON :", xhr.responseText);
+            
+                recognition.addEventListener("result", (event) => {
+                    if (isSpeaking || !micEnabled) return;
+                    const transcript = event.results[event.results.length - 1][0].transcript.trim();
+                    if (transcript) sendMessage(transcript);
+                });
+            
+                recognition.addEventListener("error", (e) => {
+                    $('#voice-status').text('❌ Erreur micro');
+                    micEnabled = false;
+                    $('#mic-toggle').text('🎤 Activer le micro');
+                });
+            
+                recognition.addEventListener("end", () => {
+                    if (micEnabled && !isSpeaking) {
+                        recognition.start();
+                        $('#voice-status').text('🎤 Micro activé');
+                    }
+                });
+            
+                $('#chat-toggle').click(function() {
+                    $('#chat-content').slideToggle();
+                    $(this).text($('#chat-content').is(":visible") ? "❌ Fermer le Chat" : "💬 Ouvrir le Chat");
+                });
+            
+                $('#send-button').click(sendMessage);
+                $('#user-input').keypress(e => { if (e.which == 13) sendMessage(); });
+            
+                function sendMessage(text = null) {
+                    let message = text || $('#user-input').val().trim();
+                    if (!message) return;
+                    $('#chat-messages').append(`<div class="message">${message}</div><br>`);
+                    $('#user-input').val('');
+                    $.post('/chatbot/handle_message',
+                           JSON.stringify({ message, user_token: userToken }),
+                           data => {
+                               const botResp = data.response;
+                               $('#chat-messages').append(`<div class="message received">${botResp}</div><br>`);
+                               $('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
+                               chatHistory.push({ question: message, response: botResp });
+                               saveChatHistory();
+                               isSpeaking = true;
+                               recognition.abort();
+                               let utter = new SpeechSynthesisUtterance(botResp);
+                               utter.lang = "fr-FR";
+                               utter.onend = () => { isSpeaking = false; if(micEnabled) recognition.start(); };
+                               speechSynthesis.speak(utter);
+                           }, 'json');
+                }
+            
+                function saveChatHistory() {
+                    $.post('/save_chat', JSON.stringify({ user_token: userToken, chat: chatHistory }));
                 }
             });
-        }
-        
-        // Activer la reconnaissance vocale
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ audio: true })
-                .then(() => console.log("Micro activé !"))
-                .catch((error) => console.error("Erreur d'accès au micro :", error));
-        }
-        
-        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-        recognition.lang = "fr-FR";
-        recognition.continuous = true;
-        recognition.interimResults = false;
-        
-        recognition.start();
-        
-        recognition.addEventListener("result", (event) => {
-            // Ignorer les résultats si le bot parle
-            if (isSpeaking) return;
-            const text = event.results[event.results.length - 1][0].transcript;
-            sendMessage(text);
-        });
-        
-        recognition.addEventListener("error", (event) => {
-            console.error("Erreur de reconnaissance vocale :", event.error);
-            $("#voice-status").text("❌ Erreur micro");
-            setTimeout(() => { $("#voice-status").text("🎤 Micro activé"); }, 3000);
-        });
-        
-        recognition.addEventListener("end", () => {
-            $("#voice-status").text("⏳ Relance...");
-            setTimeout(() => {
-                if (!isSpeaking) {
-                    recognition.start();
-                    $("#voice-status").text("🎤 Micro activé");
-                }
-            }, 1000);
-        });
-    });
-    </script>
+            </script>
+            
 
 </body>
 </html>
