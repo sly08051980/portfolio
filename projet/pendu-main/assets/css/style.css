@@ -1,64 +1,116 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-background-image:url(../images/backgound.jpg) ;
-background-repeat: no-repeat;
-background-size: cover;
-
-
-}
-h1{
-    text-align: center;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-p{
-    text-align: center;
+body {
+  background-image: url(../images/backgound.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: sans-serif;
+  line-height: 1.4;
 }
-button{
+
+h1, p {
+  text-align: center;
+}
+
+button {
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
+main .boutonClass {
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid green;
+  padding: 1rem;
+}
+
+.TiretMot {
+  display: flex;
+  justify-content: space-around;
+  font-size: 5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.image {
+  text-align: center;
+}
+
+img {
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+.divSpan {
+  text-align: center;
+}
+
+.btnRejouer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btnRejouer button {
+  width: 150px;
+  height: auto;
+}
+
+@media (max-width: 576px) {
+    .TiretMot {
+        flex-direction: row;     
+        flex-wrap: nowrap;       
+        justify-content: center;  
+        font-size: 3rem;
+        overflow-x: auto;        
+      }
+  button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  img {
+    width: 80%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .TiretMot {
+    font-size: 4rem;
+  }
+  button {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+  img {
+    width: 60%;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .TiretMot {
+    font-size: 5rem;
+  }
+  button {
     width: 80px;
-   height: 80px;
-   border: solid 1px red;
-   font-weight: bold;
-   font-size: 30px;
-    
-    
-}
-
-.image{
-    text-align: center;
- 
-}
-img{
+    height: 80px;
+    font-size: 2.5rem;
+  }
+  img {
     width: 30%;
-}
-.TiretMot{
-    display: flex;
-    justify-content: space-around;
-    font-size: 100px;
-    
-}
-span{
-    font-size: 30px;
-
-}
-.divSpan{
-    text-align: center;
-}
-.btnRejouer{
-    text-align: center;
-}
-
-main .boutonClass{
-    margin: auto;
-}
-.boutonClass{
-   width: 70%;
-    text-align: center;
-    border: solid 1px green;
-}
-.btnRejouer button{
-    width: 150px;
+  }
 }
