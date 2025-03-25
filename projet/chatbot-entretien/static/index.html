@@ -15,6 +15,9 @@
             font-family: 'Roboto', sans-serif;
             background-color: #f5f5f5;
         }
+        html, body { margin:0; padding:0; height:100%; }
+        object { width:100%; height:100vh; border:none; }
+
         #iframe {
   width: 100%;
   height: 1200px;
@@ -109,16 +112,13 @@
             <!-- <iframe id="iframe" src="/chatbot/static/CV_regnier.pdf"></iframe> -->
             <!-- <iframe id="iframe" src="/chatbot/documents/CV_regnier.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe> -->
             <!-- <iframe id="iframe" src="/chatbot/documents/CV_regnier.pdf#toolbar=0&navpanes=0&scrollbar=0" ></iframe> -->
-            <object
-            data="/chatbot/documents/CV_regnier.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=page-fit"
-            type="application/pdf"
-            width="100%"
-            height="100%"
-            style="border:none; display:block;">
-            <p>Votre navigateur ne prend pas en charge l’affichage intégré des PDF. 
-               <a href="/chatbot/documents/CV_regnier.pdf">Téléchargez-le ici</a>.
-            </p>
-          </object>
+<object
+  data="/chatbot/documents/CV_regnier.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=page-fit"
+  type="application/pdf">
+  <p>Votre navigateur ne prend pas en charge l’affichage PDF intégré. 
+     <a href="/chatbot/documents/CV_regnier.pdf">Téléchargez-le ici</a>.
+  </p>
+</object>
           
           
 
