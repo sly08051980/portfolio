@@ -3,199 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Regnier Sylvain</title>
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
-    <title>Document</title>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #121212;
+        color: #f0f0f0;
+      }
+
+    </style>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Portfolio</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="https:regniersylvain.ngravecreations.com">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://regniersylvain.ngravecreations.com/chatbot/">CV et chatbot python</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https:ngravecreations.com">Ngrave Symfony</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="projet/pokemon/index.html">Liste Pokemon JS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="projet/morpion-main/index.html">Pokemon NodeJs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="projet/morpion-main/index.html">Morpion JS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="projet/pendu-main/index.html">Pendu JS</a>
-              </li>
-            </ul>
-          </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+
+
+    <header class="text-center py-5">
+      <div class="container">
+        <h1 class="fw-bold">REGNIER Sylvain</h1>
+        <div class="row justify-content-md-center">
+        <div class="col-7">
+        <p class="lead">Développeur web junior à la recherche d’une alternance pour préparer le titre professionnel de Concepteur Développeur d’Applications.</p>
+    </div>
+    <div>
+        <p class="card-text">PHP, Java, Symfony, JS, Node.js, Python</p>
+      </div>
     </header>
-    <div class="container pt-4">
-      <div class="row">
-        <div class="col-sm-12 text-center">
-          <h1 class="text-white">REGNIER Sylvain</h1>
-        </div>
+
+    <!-- INTRO -->
+    <section class="py-4">
+      <div class="container text-center">
+        <p>Bienvenue sur mon portfolio. Vous trouverez ici mes réalisations ainsi que mon CV.</p>
+        <p>Je suis à la recherche d'une alternance en développement web. Tous les projets suivants ont été réalisés dans ce cadre de ma formation developpeur web / web mobile.</p>
       </div>
+    </section>
 
-      <div class="row">
-        <div class="col-sm-12 text-center pt-5">
-          <div class="speech-bubble">
-            <p>Bienvenue sur mon portfolio.</p>
-            <p>Je m'appelle Sylvain Regnier.</p>
-            <p>Vous trouverez ici mes réalisations ainsi que mon CV.</p>
-            <p>
-              Souhaitant obtenir le diplôme CDA (Concepteur Développeur d'Applications), je suis actuellement à la recherche d'une entreprise pour effectuer une alternance en développement web, Python ou Java. Dans les projets suivants, différents langages vous sont présentés.
-            </p>
-
-            <p>L'ensemble de cette solution est hébergé sur une infrastructure dédiée, dont j'assure l'administration.</p>
+    <!-- PROJETS -->
+    <section id="projets" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Mes Projets</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- Projet 1 -->
+          <div class="col">
+            <div class="card h-100">
+                <h5 class="card-title">CV & Chatbot Python</h5>
+                <p class="card-text">Chatbot de pré-entretien avec interface web moderne.</p>
+                
+              <div class="card-body">
+                <iframe src="https://regniersylvain.ngravecreations.com/chatbot/" class="card-img-top" width="100%" height="600"></iframe>
+              </div>
+              <a href="https://regniersylvain.ngravecreations.com/chatbot/" class="btn btn-outline-light" target="_blank">Voir</a>
+            
+            </div>
           </div>
-         
-          <model-viewer
-          src="./assets/img/perso.glb" 
-          alt="Modèle 3D du personnage" 
-          auto-rotate 
-          camera-orbit="100deg 75deg 2.5m" 
-          rotation-per-second="-0.5">
+
+          <!-- Projet 2 -->
+          <div class="col">
+            <div class="card h-100">
+                <h5 class="card-title">Site Symfony - Ngrave</h5>
+                <p class="card-text">Site e-commerce Symfony avec intégration API PayPal.</p>
+               
+              
+              <div class="card-body">
+                <img src="assets/img/ngrave.png" class="card-img-top" alt="ngravecreations">
+               
+              </div>
+              <a href="https://ngravecreations.com" class="btn btn-outline-light" target="_blank">Voir</a>
+            </div>
+          </div>
+
+          <!-- Projet 3 -->
+          <div class="col">
+            <div class="card h-100">
+              
+              <h5 class="card-title">Liste Pokémon JS</h5>
+              <p class="card-text">API JS pour afficher des cartes Pokémon.</p>
           
-          </model-viewer>
+              <div class="card-body">
+                <iframe src="projet/pokemon/index.html" class="card-img-top" height="600"></iframe>
+                
+              </div>
+              <a href="projet/pokemon/index.html" class="btn btn-outline-light" target="_blank">Voir</a>
+            </div>
+          </div>
+
+          <!-- Projet 4 -->
+          <div class="col">
+            <div class="card h-100">
+             
+              <h5 class="card-title">API Pokémons Node.js</h5>
+              <p class="card-text">Ajout/recherche dans un fichier JSON.</p>
+              
+              <div class="card-body">
+                <iframe src="https://regniersylvain.ngravecreations.com/api/" class="card-img-top" height="600"></iframe>
+   
+              </div>
+              <a href="https://regniersylvain.ngravecreations.com/api/" class="btn btn-outline-light" target="_blank">Voir</a>
+            </div>
+          </div>
+
+          <!-- Projet 5 -->
+          <div class="col">
+            <div class="card h-100">
+              <h5 class="card-title">Morpion JS</h5>
+              <p class="card-text">Jouer avec un bot .</p>
+             
+              <div class="card-body">
+                <iframe src="projet/morpion-main/index.html" class="card-img-top" height="600"></iframe>
+               
+              </div>
+              <a href="projet/morpion-main/index.html" class="btn btn-outline-light" target="_blank">Voir</a>
+            </div>
+          </div>
+
+          <!-- Projet 6 -->
+          <div class="col">
+            <div class="card h-100">
+                <h5 class="card-title">Pendu JS</h5>
+                <p class="card-text">Jeu du pendu en JavaScript.</p>
+                
+              
+              <div class="card-body">
+                <iframe src="projet/pendu-main/index.html" class="card-img-top" height="600"></iframe>
+             
+              </div>
+              <a href="projet/pendu-main/index.html" class="btn btn-outline-light" target="_blank">Voir</a>
+            </div>
+          </div>
         </div>
       </div>
-      <section>
-        <div class="row g-lg-3">
-          <div class="col-sm-12 ">
-            <h2 class="text-white">Mes Projets</h2>
-          </div>
-          <div class="col-sm-12 pt-2 col-lg-4">
-            <p class="text-white">Curriculum Vitae présentant un chatbot de pré-entretien développé en Python et doté d'une interface web moderne.</p>
-<a class="text-white" href="https://regniersylvain.ngravecreations.com/chatbot/" target="_blank">CV et Chatbot</a>
-<iframe src="https://regniersylvain.ngravecreations.com/chatbot/" width="100%" height="600px" ></iframe>
-          </div>
-          <div class="col-sm-12 pt-2 col-lg-4">
-            <p class="text-white">Ce site a été élaboré sous Symfony, intégrant la gestion de différentes API telles que PayPal.</p>
+    </section>
 
-            <a class="text-white" href="https://ngravecreations.com/" target="_blank">
-              Visiter le site Ngrave
-            </a>
-<img src="assets/img/ngrave.png" alt="ngrave creation"  width="100%" height="600px">
-          </div>
-          <div class="col-sm-12 col-lg-4">
-            <p class="text-white">Utilisation de l'API Pokémon, codée en JavaScript, permettant de récupérer les informations de certains Pokémon à partir d'une liste restreinte.</p>
-            <a class= "text-white"href="projet/pokemon/index.html" target="_blank">Liste Pokemon</a>
-            <iframe src="projet/pokemon/index.html" width="100%" height="600px" frameborder="0">
-              Votre navigateur ne supporte pas les iframes.
-            </iframe>
-          </div>
-          <div class="col-sm-12 col-lg-4">
-            <p class="text-white">
-              Sur ce projet j'ai utiisé node JS 
-            </p>
-            <p class="text-white">Projet développé avec Node.js, permettant d'ajouter des informations dans un fichier JSON et de les afficher.</p>
-            <a class= "text-white"href="https://regniersylvain.ngravecreations.com/api/" target="_blank">Pokemons</a>
-            <iframe src="https://regniersylvain.ngravecreations.com/api/" width="100%" height="600px" frameborder="0">
-              Votre navigateur ne supporte pas les iframes.
-            </iframe>
-          </div>
-          <div class="col-sm-12 col-lg-4">
-            <p class="text-white">Jeu du morpion doté d'un bot aléatoire assurant le rôle du second joueur.</p>
 
-          <a class= "text-white"href="projet/morpion-main/index.html" target="_blank">Morpion</a>
-          <iframe src="projet/morpion-main/index.html" width="100%" height="600px" frameborder="0">
-            Votre navigateur ne supporte pas les iframes.
-          </iframe>
+    <footer id="contact" class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+          <p class="mb-1">Regnier Sylvain</p>
+          <p class="mb-1">📍 Marseille | 📞 06 20 94 17 45</p>
+          <p class="mb-1">📧 regnier.sylvain@yahoo.fr</p>
+          <div class="mb-2">
+            <a href="https://github.com/sly08051980" class="text-white mx-2"><i class="fab fa-github fa-lg"></i></a>
+            <a href="https://linkedin.com/in/sylvain-regnier-37216a13a" class="text-white mx-2"><i class="fab fa-linkedin fa-lg"></i></a>
+          </div>
+          <small>&copy; 2025 Regnier Sylvain</small>
         </div>
-        <div class="col-sm-12 col-lg-4">
-          <p class="text-white">Jeu du pendu développé en JavaScript.</p>
-          <a class= "text-white"href="projet/pendu-main/index.html" target="_blank">Pendu</a>
-          <iframe src="projet/pendu-main/index.html" width="100%" height="600px" frameborder="0">
-            Votre navigateur ne supporte pas les iframes.
-          </iframe>
-        </div>
-      </div>
-      </section>
-    </div>
-    <footer class="text-center pt-5" style="background-color: transparent;">
-<section>
-  <div class="row">
-    <div class="col-12">
-      <p class="text-white">Regnier Sylvain</p>
-      <p class="text-white">6 Avenue Maréchal Ney</p>
-<p class="text-white">13011 Marseille</p>
-<p class="text-white">0620941745</p>
-    </div>
-  </div>
-  
-</section>
-      <div class="container p-4 pb-0">
-      
-        <section class="mb-4">
-      
-          <!-- Linkedin -->
-          <a
-            data-mdb-ripple-init
-            class="btn text-white btn-floating m-1"
-            style="background-color: #0082ca;"
-            href="www.linkedin.com/in/sylvain-regnier-37216a13a"
-            role="button"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <!-- Github -->
-          <a
-            data-mdb-ripple-init
-            class="btn text-white btn-floating m-1"
-            style="background-color: #333333;"
-            href="https://github.com/sly08051980"
-            role="button"
-            ><i class="fab fa-github"></i
-          ></a>
-        </section>
+      </footer>
 
-      </div>
-
-      <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2025 Copyright:
-        <a class="text-white"  href="https://regniersylvain.ngravecreations.com/">Regnier Sylvain</a>
-      </div>
-
-    </footer>
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
