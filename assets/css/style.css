@@ -41,8 +41,8 @@ a:hover {
   transform: scale(1.02);
 }
 .card-title{
-color: purple;
-text-align: center;
+color: purple !important;
+text-align: center !important;
 }
 .card-text{
   color: antiquewhite;
