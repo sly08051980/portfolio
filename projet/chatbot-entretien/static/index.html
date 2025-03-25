@@ -232,10 +232,15 @@
             
                             const utterance = new SpeechSynthesisUtterance(botResponse);
                             utterance.lang = "fr-FR";
-                            utterance.onend = () => {
-                                isSpeaking = false;
-                                if (micEnabled) recognition.start();
-                            };
+                            utterance.onend = function() {
+    isSpeaking = false;
+    if (micEnabled) {
+        setTimeout(() => {
+            recognition.start();
+            $('#voice-status').text('🎤 Micro activé');
+        }, 300); 
+    }
+};
                             speechSynthesis.speak(utterance);
                         }
                     });
