@@ -18,6 +18,7 @@ import unicodedata
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from langdetect import detect, DetectorFactory
+from fastapi.responses import FileResponse, HTMLResponse
 
 DetectorFactory.seed = 0
 
@@ -385,6 +386,10 @@ app = FastAPI(root_path="/chatbot")
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/documents", StaticFiles(directory="documents"), name="documents")
+
+@app.get("/", response_class=HTMLResponse)
+def redirect_to_index():
+    return FileResponse("static/index.html")
 
 class QuestionRequest(BaseModel):
     question: str
