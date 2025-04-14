@@ -92,7 +92,7 @@ def normalize_argot(text: str) -> str:
     tokens = text.split()
     normalized_tokens = [slang_mapping.get(token.lower(), token) for token in tokens]
     normalized_text = " ".join(normalized_tokens)
-    print(f"Texte normalisé: '{normalized_text}'")
+  #  print(f"Texte normalisé: '{normalized_text}'")
     return normalized_text
 
 def remove_salutations(text: str) -> str:
@@ -165,14 +165,14 @@ def process_text(text: str) -> str:
 # --- Fonction pour extraire l'âge d'un texte ---
 def extract_age(text: str) -> str:
 
-    print(f"Extraction d'âge sur : '{text}'")
+   # print(f"Extraction d'âge sur : '{text}'")
 
     match = re.search(r"(\d+)\s*ans", text, re.IGNORECASE)
     if match:
         return match.group(1)
     return None
 def extract_frere(text: str) -> str:
-    print(f"Extract frere ou soeur : '{text}'")
+   # print(f"Extract frere ou soeur : '{text}'")
     match = re.search(r"(?:j'ai|ai)?\s*(un|une|\d+)\s*(frère|frere|soeur|sœur)s?", text, re.IGNORECASE)
     if match:
         return match.group(1)
@@ -184,7 +184,7 @@ def search_frere_soeur_in_database(target_tag="presentation_sylvain_regnier") ->
         if entry.get("tag", "") == target_tag:
             frere = extract_frere(entry.get("response", ""))
             if frere:
-                print(f"Frere/soeur trouvé dans le tag '{target_tag}': {frere}")
+                # print(f"Frere/soeur trouvé dans le tag '{target_tag}': {frere}")
                 return frere
     return None
 
@@ -195,7 +195,7 @@ def search_age_in_database(target_tag="presentation_sylvain_regnier") -> str:
         if entry.get("tag", "") == target_tag:
             age = extract_age(entry.get("response", ""))
             if age:
-                print(f"Âge trouvé dans le tag '{target_tag}': {age} dans '{entry.get('response', '')}'")
+                 #(f"Âge trouvé dans le tag '{target_tag}': {age} dans '{entry.get('response', '')}'")
                 return age
     return None
 
@@ -204,7 +204,7 @@ def search_daughter_age_in_database(target_tag="presentation_fille_sylvain") -> 
         if entry.get("tag", "") == target_tag:
             age = extract_age(entry.get("response", ""))
             if age:
-                print(f"Âge de la fille trouvé dans le tag '{target_tag}': {age} ans.")
+                # print(f"Âge de la fille trouvé dans le tag '{target_tag}': {age} ans.")
                 return age
     return None
 
@@ -253,7 +253,7 @@ for file_path in json_files:
             data = json.load(file)
             if "intents" in data and isinstance(data["intents"], list):
                 local_count = 0
-                print(f"\n📂 Traitement de {file_path}...")
+                # print(f"\n📂 Traitement de {file_path}...")
                 for intent in data["intents"]:
                     tag = str(intent.get("tag", "")).lower()
                     context_set = str(intent.get("context_set", "")).lower()
@@ -398,11 +398,11 @@ class QuestionRequest(BaseModel):
 
 @app.post("/handle_message")
 async def handle_message(request: Request):
-    print("🟢 handle_message start")
+    # print("🟢 handle_message start")
     data = await request.json()
     raw = data.get("message", "")
-    raw_original = raw  # pour garder une trace si tu modifies raw plus tard
-    print(f"🔹 Message reçu : {raw}")
+    raw_original = raw  
+   # print(f"🔹 Message reçu : {raw}")
 
     salutations_detectees = {"bonjour", "salut", "yo", "wesh", "coucou", "hey"}
     if normalize_text(raw_original) in salutations_detectees:
@@ -418,7 +418,7 @@ async def handle_message(request: Request):
     text_without_salut = remove_salutations(text_with_slang_handled)
    
 
-    print(f"🔹 Texte normalisé : {text_without_salut}")
+   # print(f"🔹 Texte normalisé : {text_without_salut}")
 
 
     responses = []
@@ -427,7 +427,7 @@ async def handle_message(request: Request):
     best_tag = ""
 
     sub_questions = split_into_subquestions(text_without_salut)
-    print(f"🔍 Sous-questions détectées : {sub_questions}")
+    # print(f"🔍 Sous-questions détectées : {sub_questions}")
 
     for sub_q in sub_questions:
         emb_input = remove_accents(sub_q.lower())
@@ -456,14 +456,14 @@ async def handle_message(request: Request):
 
     user_token = data.get("user_token", "unknown")
     base_text = next((entry["response"] for entry in database if entry.get("tag") == "presentation_sylvain_regnier"), "")
-    print(f"🔸 Texte de base pour extraction : {base_text}")
+   # print(f"🔸 Texte de base pour extraction : {base_text}")
 
     # --- Détection frère / sœur ---
     if (re.search(r"\b(fr[eè]re|soeur|sœur)s?\b", raw_original.lower())
         and result["tag"] not in ["extraction_frere_soeur"]
         and (result["score"] is None or result["score"] < 0.85)):
 
-        print("🟡 Détection frere/soeur (contrôlée)")
+       #  print("🟡 Détection frere/soeur (contrôlée)")
         match_frere = re.search(r"(?:j'ai|ai)?\s*(un|\d+)\s*(fr[eè]re)s?", base_text, re.IGNORECASE)
         match_soeur = re.search(r"(?:j'ai|ai)?\s*(une|un|\d+)\s*(sœur|soeur)s?", base_text, re.IGNORECASE)
 
@@ -473,21 +473,21 @@ async def handle_message(request: Request):
             result["response"] = f"J'ai {txt}"
             result["tag"] = "extraction_frere_soeur"
             result["score"] = None
-            print(f"✅ Frère(s) détecté(s) : {txt}")
+           #  print(f"✅ Frère(s) détecté(s) : {txt}")
         elif match_soeur:
             val = match_soeur.group(1)
             txt = "une sœur." if val == "1" or val.lower() == "une" else f"{val} sœurs."
             result["response"] = f"J'ai {txt}"
             result["tag"] = "extraction_frere_soeur"
             result["score"] = None
-            print(f"✅ Sœur(s) détectée(s) : {txt}")
+          #   print(f"✅ Sœur(s) détectée(s) : {txt}")
 
     # --- Détection âge personnel / fille ---
     if (re.search(r"\b(?:âge|age|\d+\s*ans)\b", raw_original.lower())
         and result["tag"] not in ["presentation_sylvain_regnier", "extraction_age", "extraction_age_fille"]
         and (result["score"] is None or result["score"] < 0.85)):
 
-        print("🟡 Détection possible d'âge")
+       #  print("🟡 Détection possible d'âge")
         if "fille" in raw_original.lower():
             match = re.search(r"fille (?:de|a)\s*(\d+)\s*ans", base_text, re.IGNORECASE)
             if match:
@@ -495,34 +495,34 @@ async def handle_message(request: Request):
                 result["response"] = f"Ma fille a {daughter_age} ans."
                 result["score"] = None
                 result["tag"] = "extraction_age_fille"
-                print(f"✅ Âge fille détecté : {daughter_age}")
+               #  print(f"✅ Âge fille détecté : {daughter_age}")
         else:
             my_age = extract_age(base_text)
             if my_age:
                 result["response"] = f"J'ai {my_age} ans."
                 result["score"] = None
                 result["tag"] = "extraction_age"
-                print(f"✅ Âge personnel détecté : {my_age}")
+              #   print(f"✅ Âge personnel détecté : {my_age}")
 
-    print(f"📝 Sauvegarde du message avec réponse : {result['response']}")
+   # print(f"📝 Sauvegarde du message avec réponse : {result['response']}")
     save_chat_message(user_token, raw, result["response"], result["score"], result["tag"])
-    print("✅ Réponse renvoyée")
+   #  print("✅ Réponse renvoyée")
     return result
 
 # 👉 Cette fonction traite un message complet
 def test_handle_message(message: str):
-    print("🔹 Message reçu :", message)
+   #  print("🔹 Message reçu :", message)
 
     # Étape 1 : découpe en sous-questions sur le message brut
     subquestions = split_into_subquestions(message)
-    print("🔍 Sous-questions détectées :", subquestions)
+   #  print("🔍 Sous-questions détectées :", subquestions)
 
     all_results = []
 
     for subq in subquestions:
         # Étape 2 : normalise CHAQUE sous-question
         normalized = normalize_text(subq)
-        print("→ Texte normalisé :", normalized)
+      #   print("→ Texte normalisé :", normalized)
 
         # Étape 3 : classification
         vector = vectorizer.transform([normalized])
@@ -530,7 +530,7 @@ def test_handle_message(message: str):
         predicted_tag = classifier.classes_[proba.argmax()]
         confidence = max(proba)
 
-        print(f"🔮 Classifieur LogisticRegression → {predicted_tag} avec confiance {confidence:.2f}")
+      #   print(f"🔮 Classifieur LogisticRegression → {predicted_tag} avec confiance {confidence:.2f}")
         all_results.append({
             "subquestion": subq,
             "normalized": normalized,
@@ -550,7 +550,7 @@ def find_best_response(user_input):
 # 🔍 Matching exact dans les patterns (avant toute logique NLP)
     for entry in database:
         if normalize_text(entry["question"]) == normalized_input:
-            print("✅ Matching exact trouvé dans les patterns → réponse prioritaire")
+           #  print("✅ Matching exact trouvé dans les patterns → réponse prioritaire")
             return {
                 "response": entry["response"],
                 "score": 1.0,
@@ -561,7 +561,7 @@ def find_best_response(user_input):
 # 🔹 Salutations détectées manuellement
     salutations = {"bonjour", "salut", "yo", "hey", "hello", "coucou", "wesh", "plop", "hi", "bien le bonjour"}
     if user_input in salutations:
-        print("🔸 Salutation reconnue directement sans NLP")
+        # print("🔸 Salutation reconnue directement sans NLP")
         return {
             "response": "Bonjour, bienvenue sur mon ChatBot de pré-entretient",
             "score": 1.0,
@@ -591,8 +591,8 @@ def find_best_response(user_input):
     proba = clf.predict_proba(user_emb.reshape(1, -1))[0]
     predicted_tag = clf.classes_[np.argmax(proba)]
     doubt = {tag: float(prob) for tag, prob in zip(clf.classes_, proba)}
-    print(f"🔮 Classifieur LogisticRegression → {predicted_tag} avec confiance {max(proba):.2f}")
-    print("📊 Distribution des probabilités:", doubt)
+    # print(f"🔮 Classifieur LogisticRegression → {predicted_tag} avec confiance {max(proba):.2f}")
+    # print("📊 Distribution des probabilités:", doubt)
 
     # 🎯 Recherche dans les questions du tag prédit
     filtered_indices = [i for i, entry in enumerate(database) if entry["tag"] == predicted_tag]
@@ -605,7 +605,7 @@ def find_best_response(user_input):
         best_match_index = filtered_indices[best_filtered_idx]
         best_match_score = similarities[best_filtered_idx]
         best_match_entry = database[best_match_index]
-        print(f"📈 Score dans le tag '{predicted_tag}': {best_match_score:.2f}")
+       #  print(f"📈 Score dans le tag '{predicted_tag}': {best_match_score:.2f}")
 
 # 🔁 Fallback global FAISS
     D, I = global_index.search(user_norm, 1)
@@ -615,7 +615,7 @@ def find_best_response(user_input):
     # 🩹 Forçage si mot-clé entreprise détecté
     for keyword, tag in ENTREPRISE_TAGS.items():
         if keyword in user_input:
-            print(f"🔁 Forçage direct tag '{tag}' à cause du mot-clé '{keyword}'")
+           #  print(f"🔁 Forçage direct tag '{tag}' à cause du mot-clé '{keyword}'")
             for entry in database:
                 if entry["tag"] == tag:
                     return {
@@ -626,7 +626,7 @@ def find_best_response(user_input):
                     }
 # 💡 On compare les deux résultats et garde le meilleur
     if faiss_score > best_match_score:
-        print("✅ Meilleur score FAISS global, réponse prioritaire")
+       #  print("✅ Meilleur score FAISS global, réponse prioritaire")
         return {
             "response": faiss_entry["response"],
             "score": float(faiss_score),
@@ -686,7 +686,7 @@ def test_top_k_intents(user_input, k=5):
         sim = np.dot(emb, user_norm)
         scores.append((i, sim))
     top_k = sorted(scores, key=lambda x: x[1], reverse=True)[:k]
-    print(f"\n🔍 Top {k} intents pour : '{user_input}'\n")
+    # print(f"\n🔍 Top {k} intents pour : '{user_input}'\n")
     for idx, sim in top_k:
         print(f"  {sim:.4f} | tag: {database[idx]['tag']} | q: {database[idx]['question']}")
 
@@ -706,7 +706,7 @@ joblib.dump(classifier, "classifier.joblib")
 
 
 
-test_top_k_intents("C’est quoi pour toi une base de données relationnelle")
+#test_top_k_intents("C’est quoi pour toi une base de données relationnelle")
 
 # Pour démarrer le serveur, exécute par exemple :
 # uvicorn testserver:app --reload
