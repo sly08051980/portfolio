@@ -25,6 +25,7 @@ DetectorFactory.seed = 0
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('punkt')
+nltk.download('punkt_tab')
 
 def get_synonyms_fr(word):
     word = remove_accents(word.lower())
