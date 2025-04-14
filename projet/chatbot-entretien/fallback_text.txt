@@ -1,0 +1,681 @@
+CSS (Cascading Style Sheets) est un langage utilisé pour styliser et mettre en forme les pages HTML.
+HTML structure la page en définissant son contenu et sa hiérarchie, tandis que CSS la met en forme en contrôlant les couleurs, les polices, les marges et le positionnement des éléments.
+Il y a trois méthodes :
+
+- **Interne** : `<style>...</style>` dans `<head>`.
+- **Externe** : `<link rel="stylesheet" href="style.css">`.
+- **En ligne** : `style="color: red;"` dans un élément HTML.
+Un `id` (`#id`) est un identifiant unique, qui ne peut être appliqué qu'à un seul élément dans une page. Une `class` (`.class`), en revanche, peut être utilisée sur plusieurs éléments pour appliquer le même style à plusieurs composants.
+Je suis un chatbot conçu pour répondre à une variété de questions. Cependant, sans avoir des informations sur votre société, cette question spécifique est trop précise pour que je puisse y répondre.
+Mon objectif principal est d’abord de réussir mon alternance et de m’investir pleinement dans mes missions. Je souhaite monter en compétences, apprendre les bonnes pratiques et contribuer efficacement aux projets de l’entreprise. Si tout se passe bien et que l’opportunité se présente, j’aimerais poursuivre mon parcours professionnel avec vous après mon alternance. J’apprécierais de pouvoir évoluer au sein de l’entreprise, en prenant progressivement plus de responsabilités et en approfondissant mon expertise. Je ne vois pas cette alternance comme une simple étape, mais comme une véritable opportunité d’intégration et de développement à long terme.
+Pour moi, un environnement de travail idéal, c’est avant tout un cadre bienveillant et collaboratif, où l’échange et le partage de connaissances sont encouragés. J’aime travailler dans une équipe où chacun peut apprendre des autres et où il y a une bonne communication. J’accorde aussi beaucoup d’importance à l’organisation et à la clarté des missions. Avoir des objectifs bien définis et un cadre structuré m’aide à être plus efficace et à mieux gérer mon travail. Enfin, en tant que bénéficiaire de la RQTH, un cadre de travail adapté à mes contraintes horaires est essentiel. Un mercredi sur deux, selon le lieu de travail, je ne peux pas finir après 11h30, mais je peux reprendre après 18h, et un vendredi sur deux, je ne peux pas terminer plus tard que 16h. L’idéal pour moi serait donc un environnement qui favorise à la fois l’apprentissage, la collaboration et un bon équilibre entre mes responsabilités professionnelles et mes contraintes personnelles.
+Pour moi, un bon supérieur est à l’écoute, clair dans ses attentes et encourageant. Je préfère un management participatif, basé sur la confiance et l’échange, tout en restant disponible en cas de besoin. L’idéal est un manager qui valorise les compétences et favorise l’évolution de son équipe.
+Si je suis en désaccord avec mon supérieur, je commence par écouter son point de vue pour bien comprendre sa décision. Si je pense qu’une autre approche pourrait être bénéfique, je l’exprime de manière constructive et argumentée. Cependant, je sais aussi que le responsable a le dernier mot, et une fois la décision prise, je l’applique en respectant les choix de l’entreprise.
+Je suis quelqu’un de professionnel et posé, donc je fais en sorte d’éviter les conflits, surtout avec ma hiérarchie. Cependant, un manque de respect pourrait être une source de désaccord pour moi. Dans ce cas, je privilégie toujours le dialogue et la communication calme pour exprimer mon point de vue sans insistance et trouver un terrain d’entente.
+En tant qu’alternant, je peux apporter ma motivation, ma capacité d’apprentissage rapide et ma rigueur. Je suis prêt à m’investir pleinement pour monter en compétences rapidement et contribuer efficacement aux projets de l’équipe. Mon regard neuf et ma curiosité me permettront aussi de proposer des idées et d’apporter un regard frais sur certaines problématiques.
+Mon objectif principal sera de m’intégrer rapidement et de monter en compétence sur l’environnement de travail. Dans un premier temps, je vais échanger avec l’équipe pour comprendre leur manière de travailler, les outils et les méthodologies utilisées. En parallèle, je prendrai le temps d’analyser le code, la documentation et les projets en cours afin d’être rapidement à l’aise avec l’environnement technique. Ensuite, je chercherai à contribuer progressivement en prenant en charge des tâches adaptées à mon niveau d’intégration, comme la correction de bugs ou l’ajout de petites fonctionnalités, afin de mettre en pratique mes compétences tout en respectant les bonnes pratiques de l’entreprise. Enfin, à la fin du premier mois, je me fixerai un bilan personnel pour évaluer ma progression et identifier les points à approfondir, afin de gagner en efficacité et en autonomie pour la suite.
+Dans un premier temps, mon objectif est de réussir mon alternance en montant en compétences et en devenant rapidement opérationnel sur les projets. Je veux apprendre les bonnes pratiques, m’intégrer efficacement dans l’équipe et apporter de la valeur dès que possible. À moyen terme, si l’opportunité se présente, j’aimerais poursuivre mon parcours dans l’entreprise après mon alternance, que ce soit en CDI ou sur un autre type de contrat, pour continuer à évoluer et approfondir mes compétences sur des projets plus complexes. À plus long terme, je souhaiterais gagner en autonomie, prendre en charge des missions plus stratégiques et, pourquoi pas, évoluer vers un poste de référent technique ou lead développeur, afin de contribuer davantage à l’optimisation des projets et au partage des connaissances au sein de l’équipe. Mais avant tout, mon objectif est de m’impliquer pleinement dans mon alternance, d’apprendre un maximum et de m’épanouir dans un environnement où je peux évoluer sur le long terme.
+Dans cinq ans, je me vois évoluer en tant que développeur confirmé, avec une solide expertise technique et une expérience enrichissante sur différents projets. Mon premier objectif est de réussir mon alternance, d’acquérir un maximum de compétences et, si possible, de continuer à évoluer au sein de l’entreprise après cette expérience. À moyen terme, j’aimerais gagner en autonomie sur des projets plus complexes, approfondir mes connaissances en architecture logicielle et en bonnes pratiques de développement. À plus long terme, selon les opportunités, je pourrais envisager un rôle avec plus de responsabilités, comme référent technique, lead développeur ou chef de projet, afin de pouvoir encadrer une équipe et contribuer à l’amélioration continue des projets.
+Pour l’instant, mon objectif principal est de réussir mon alternance et de monter en compétences sur le terrain. Je veux me concentrer sur la pratique en entreprise, car c’est en travaillant sur des projets concrets que j’apprends le mieux. Cependant, je suis toujours dans une logique d’apprentissage continu. Si, à l’avenir, une formation complémentaire peut m’aider à approfondir un domaine spécifique, alors je serais intéressé. Je reste donc ouvert aux opportunités de formation qui pourraient m’aider à évoluer professionnellement, mais pour le moment, mon objectif est d’être pleinement opérationnel dans mon poste et d’apprendre un maximum au contact de l’équipe.
+HTML (HyperText Markup Language) est un langage de balisage utilisé pour structurer et présenter le contenu sur le web.
+La balise <head> contient des métadonnées sur le document, telles que le titre, les liens vers les feuilles de style et les scripts.
+La balise <head> en HTML permet d’inclure des métadonnées, des styles CSS, des scripts JavaScript et d'autres informations importantes pour la page web, facilitant ainsi son rendu, sa compatibilité et son référencement.
+<div> est une balise de niveau bloc utilisée pour regrouper des éléments, tandis que <span> est une balise en ligne utilisée pour appliquer du style à une partie du texte.
+La balise <a> est utilisée pour créer des liens hypertexte qui dirigent vers d'autres pages web ou des sections d'une même page.
+La balise <img> permet d'inclure une image dans une page HTML, avec l'attribut src pour spécifier la source de l'image.
+La balise <form> est utilisée pour créer un formulaire permettant à l'utilisateur d'entrer des données, telles que des champs de texte, des cases à cocher, ou des boutons, afin de les envoyer à un serveur pour traitement.
+Un commentaire en HTML est ajouté en utilisant la syntaxe <!-- commentaire -->. Les commentaires ne sont pas affichés sur la page web.
+<ol> est une liste ordonnée où les éléments sont numérotés, tandis que <ul> est une liste non ordonnée avec des puces.
+Un attribut en HTML fournit des informations supplémentaires sur un élément, généralement sous la forme nom="valeur", comme href="url" pour spécifier une destination de lien.
+La balise <form> est utilisée pour créer une structure permettant à l’utilisateur de saisir des informations qui seront envoyées au serveur pour traitement.
+L'attribut alt fournit une description alternative de l'image pour les utilisateurs ayant une déficience visuelle ou lorsque l'image ne peut être chargée.
+La balise <link> est utilisée pour lier une feuille de style CSS externe à un document HTML.
+La balise <section> est utilisée pour définir une section d'un document, souvent utilisée pour regrouper des contenus thématiques.
+La balise <meta> contient des informations importantes sur le document, comme la description de la page, l'encodage des caractères ou la configuration d'affichage pour les appareils mobiles, utiles pour les navigateurs et les moteurs de recherche.
+La balise <header> est utilisée pour définir l'en-tête d'un document ou d'une section, généralement pour inclure des titres, des logos ou des menus de navigation.
+Une liste HTML est créée avec les balises <ul> pour une liste non ordonnée (à puces) ou <ol> pour une liste ordonnée (numérotée). Chaque élément de la liste est encapsulé dans une balise <li>.
+L'attribut target='_blank' indique que le lien doit s'ouvrir dans un nouvel onglet ou une nouvelle fenêtre du navigateur.
+L'attribut href spécifie la destination du lien hypertexte. Il peut contenir une URL ou un ancrage interne dans la page.
+Un lien interne HTML est créé en utilisant une balise <a> avec l'attribut href pointant vers l'identifiant (#id) d’un autre élément dans la même page, permettant une navigation rapide vers une section précise.
+L'attribut type spécifie le type de champ dans un formulaire, comme text, password, checkbox, etc.
+La balise <footer> définit le pied de page d'un document ou d'une section, généralement utilisé pour inclure des informations de copyright, des liens ou des informations de contact.
+Le texte peut être centré en utilisant la balise <center> (désapprouvée) ou via le CSS avec la propriété text-align: center;.
+La balise <iframe> permet d'insérer et d'afficher une autre page web ou un contenu externe directement à l'intérieur d'une page HTML existante, sous forme d'une fenêtre imbriquée.
+Un tableau est créé avec la balise <table>, les lignes avec <tr>, les cellules de données avec <td> et les en-têtes de tableau avec <th>.
+Un identifiant unique en HTML se définit avec l'attribut id, permettant d’identifier précisément un élément, pour le cibler avec du CSS ou du JavaScript, ou créer des ancres internes.
+Un formulaire de contact est créé avec la balise <form>, en incluant des champs de saisie comme <input>, <textarea> et un bouton <button> pour envoyer le formulaire.
+La balise <strong> est utilisée pour marquer du texte avec une importance particulière, généralement affichée en gras par défaut.
+Pour intégrer une vidéo dans une page HTML, on utilise la balise <video> en indiquant l'attribut src pour la vidéo, avec éventuellement des balises <source> pour fournir différents formats. L'attribut controls permet d’afficher les contrôles de lecture.
+L'attribut style permet d'ajouter des styles CSS directement à un élément HTML, par exemple <p style="color:red;">.
+Un bouton en HTML est créé avec la balise <button>, qui peut avoir plusieurs types comme submit, reset ou button. Exemple : <button type="submit">Envoyer</button>.
+Un lien de téléchargement est créé avec la balise <a> et l'attribut download, comme <a href="file.pdf" download>Download</a>.
+La balise <nav> est utilisée pour définir une section de navigation contenant des liens de navigation.
+L'attribut required en HTML permet de rendre obligatoire le remplissage d'un champ avant la soumission du formulaire, assurant ainsi une validation côté client intégrée directement dans le navigateur.
+L'attribut placeholder permet d'afficher un texte temporaire dans un champ de saisie, avant que l'utilisateur n'y entre des données.
+Le fond d'écran peut être ajouté avec CSS en utilisant la propriété background-image: url('image.jpg');.
+Une balise auto-fermante n'a pas besoin de balise fermante, comme <img />, <br /> ou <hr />.
+L'attribut width dans la balise <img> permet de définir la largeur d'une image en pixels ou en pourcentage, facilitant ainsi le contrôle précis de la taille et l’optimisation du rendu visuel.
+Une feuille de style interne est ajoutée avec la balise <style> dans la section <head> du document.
+La balise <blockquote> en HTML est utilisée pour citer des passages longs provenant d'une autre source, en indiquant clairement qu'il s'agit d'une citation externe ou d’un contenu repris.
+<b> rend le texte en gras sans indiquer d'importance particulière, tandis que <strong> met l'accent sur le texte en indiquant qu'il est important.
+Une barre de défilement est ajoutée avec CSS, par exemple overflow: auto; ou overflow: scroll;.
+L'attribut charset spécifie l'encodage des caractères utilisé par la page HTML, assurant que les navigateurs affichent correctement les caractères spéciaux ou internationaux, comme par exemple avec <meta charset="UTF-8">.
+J'ai passé un bac professionnel de commerce, ensuite je suis partie sur un Deug Art du Spectacle où j'ai obtenu la première année, mais j'ai arrêté au cours de ma deuxième année.
+
+Récemment, j'ai suivi une formation de développeur web et web mobile avec le titre RNCP de niveau 5, que j'ai obtenu. Au point de vue professionnel, j'ai exercé plusieurs métiers : vendeur en prêt-à-porter masculin chez Brice, chef de poste en sécurité incendie où je gérais des agents, puis technicien réseau pour Sofi Informatique. J'ai aussi été aiguilleur à la SNCF, coordinateur technique du service client micro-informatique de Conforama, puis technicien vendeur en téléphonie portable et micro-informatique pour Internity. Depuis plus de 16 ans, je suis technicien hotliner niveau 2 chez Darty.
+J'ai obtenu un bac professionnel en commerce avant de m'engager dans un Deug Art du Spectacle. J'ai validé la première année, mais j'ai finalement interrompu mon parcours au cours de la deuxième année. Plus récemment, j'ai suivi une formation en développement web et web mobile, qui m'a permis d'obtenir le titre RNCP de niveau 5. Sur le plan professionnel, j'ai exercé divers métiers : vendeur en prêt-à-porter masculin chez Brice, chef de poste en sécurité incendie avec la gestion d'agents, puis technicien réseau chez Sofi Informatique. J'ai également travaillé en tant qu'aiguilleur à la SNCF, coordinateur technique du service client micro-informatique chez Conforama, et technicien vendeur en téléphonie et micro-informatique chez Internity. Depuis plus de 16 ans, j'occupe le poste de technicien hotliner niveau 2 chez Darty.
+Récemment, j'ai obtenu un titre RNCP de niveau 5 (bac +2) en développement web et web mobile. Au niveau professionnel, la plupart de mes expériences sont dans le domaine de l'informatique, en tant que vendeur ou technicien.
+J'ai récemment obtenu un titre RNCP de niveau 5 (bac +2) en développement web et web mobile. Mon parcours professionnel est principalement orienté vers l'informatique, où j’ai occupé des postes de vendeur et de technicien.
+Titulaire d’un titre RNCP de niveau 5 (bac +2) en développement web et web mobile, j’ai acquis une solide expérience dans le domaine de l’informatique, aussi bien en tant que vendeur qu’en tant que technicien.
+Ma formation en développement web et web mobile m’a permis d’acquérir des compétences techniques solides qui sont directement en adéquation avec ce poste. J’ai appris à maîtriser des langages essentiels comme PHP, JavaScript, HTML/CSS, ainsi que des frameworks comme Symfony et Bootstrap. Au-delà des connaissances techniques, la formation m’a aussi apporté des compétences en gestion de projet, en travail en équipe et en résolution de problèmes, des éléments clés pour mener à bien des missions en entreprise. Par ailleurs, mes projets réalisés durant la formation m’ont permis de mettre en pratique mes acquis en développant des sites web et des applications, en respectant les bonnes pratiques du développement. Enfin, je continue d’apprendre en m’auto-formant, notamment sur Python, ce qui me permet de m’adapter facilement aux nouvelles technologies et d’être opérationnel rapidement.
+Depuis toujours, je suis passionné par le développement informatique. Dès mon plus jeune âge, j’explorais la programmation sur Atari, notamment avec les langages BASIC et LOGO. Au début des années 2000, j’ai poursuivi mon apprentissage en découvrant Visual Basic à travers des livres et en me formant au HTML avec le logiciel Dreamweaver. En 2017, j’ai approfondi mes connaissances en Java pour Android, où j’ai obtenu un certificat de formation Udemy, ce qui m’a permis de développer mes propres applications mobiles. Choisir une formation en développement web et web mobile était donc une évidence, car elle me permet de structurer et approfondir mes compétences de manière plus académique. Aujourd’hui, grâce à cette alternance, je souhaite me spécialiser dans des langages comme PHP, JavaScript, Symfony et Python, tout en continuant à apprendre de nouveaux langages et à évoluer dans un environnement technologique en constante mutation.
+Durant ma formation en développement web et web mobile, j’ai particulièrement approfondi l’intégration et le développement d’applications. J’ai passé beaucoup de temps à perfectionner mes compétences en conception et structuration de sites web, en travaillant sur des projets concrets qui m’ont permis de mettre en pratique mes apprentissages. J’ai aussi consacré un temps important à l’optimisation du code et à la gestion des bases de données, car je trouve essentiel d’écrire du code propre, maintenable et performant. Enfin, je me suis particulièrement intéressé aux bonnes pratiques du développement et aux méthodologies de travail, comme Agile et Scrum, qui permettent de mieux organiser et structurer un projet en équipe. C’est dans ces domaines que j’ai le plus investi d’énergie, car ils sont directement applicables en entreprise et me permettront d’être efficace et opérationnel rapidement.
+Si je devais recommencer, je referais le même parcours, car chaque étape m’a apporté des compétences et une vision enrichissante. Mon bac pro commerce m’a permis de développer des compétences en communication et en relation client, ce qui est un vrai atout, même en développement. Mon passage en art du spectacle m’a appris la rigueur, la créativité et le travail en équipe. Et aujourd’hui, ma formation en développement web et web mobile correspond parfaitement à mes attentes et à mon projet professionnel. Avec le recul, je ne changerais rien, car toutes ces expériences ont façonné mon parcours et m’aident aujourd’hui à être plus polyvalent et à m’adapter rapidement à mon environnement.
+Pour financer mes études, j’ai toujours cherché à être autonome. Lors de mon Deug en Art du Spectacle, j’ai d’abord travaillé en parallèle sur un contrat de 15 heures chez Brice, une entreprise où j’avais déjà effectué deux stages auparavant. Ensuite, pour ma deuxième année, j’ai intégré Sécurifrance, ce qui m’a permis de poursuivre mon cursus tout en ayant une activité professionnelle. Concernant ma formation en développement web et web mobile, j’ai eu la chance de pouvoir la financer grâce à Transition Pro PACA, qui m’a permis d’effectuer cette reconversion sereinement. Ces expériences m’ont appris à gérer mon temps entre travail et études, à être rigoureux et organisé, et surtout à m’adapter aux défis tout en restant concentré sur mes objectifs.
+Je n’ai pas forcément un réseau structuré d’anciens élèves, mais je garde contact avec certaines personnes avec qui j’ai étudié ou travaillé. J’ai quelques amis très proches, dont mon meilleur ami que je connais depuis la crèche, et je reste en lien avec d’anciens collègues ou camarades de formation. Je trouve important de maintenir ces connexions, car elles peuvent toujours être utiles, que ce soit pour échanger sur des expériences, partager des conseils ou même découvrir des opportunités professionnelles. Aujourd’hui, j’essaie aussi d’élargir mon réseau en utilisant LinkedIn, notamment pour suivre l’actualité du secteur et me connecter avec des personnes qui partagent les mêmes intérêts professionnels.
+J’avais trouvé un stage à la Mairie de Marseille pour le titre de développeur web web mobile, mais il a été annulé après le départ de notre formateur. Nous sommes restés sans professeur pendant deux mois, et l’AFPA a préféré annuler les stages pour nous permettre de terminer la formation. Pour compenser, j’ai travaillé sur des projets personnels, ce qui m’a permis de mettre en pratique mes compétences et de continuer à progresser. Aujourd’hui, je suis motivé à appliquer mon apprentissage en entreprise et à évoluer dans un cadre professionnel
+Ma formation en développement web et web mobile m’a apporté les compétences nécessaires pour ce poste, notamment en conception, intégration et résolution de problèmes techniques. J’ai également appris à travailler en autonomie et en équipe sur des projets concrets, ce qui me permet d’être rapidement opérationnel et adaptable dans un environnement professionnel.
+J’ai toujours été passionné par l’informatique et le développement, ce qui m’a naturellement orienté vers ce secteur. J’aime particulièrement résoudre des problèmes techniques, concevoir des solutions et voir un projet évoluer. C’est un domaine dynamique qui me motive, car il permet d’apprendre en continu et d’avoir un impact concret sur les projets.
+J’ai choisi cette formation en développement web et web mobile car j’ai toujours été passionné par l’informatique et la programmation. C’était un choix réfléchi, qui me permet d’allier logique, créativité et résolution de problèmes techniques. Avec cette formation, je peux me reconvertir dans un domaine en pleine évolution, qui offre de nombreuses opportunités et de réelles perspectives d’avenir.
+Ma formation à l'AFPA a rencontré certains problèmes. Tout d'abord, notre formateur a démissionné après un mois et demi de formation, puis pendant deux mois, nous n'avons pas eu de formateur. Avec un collègue, nous sommes allés voir le responsable des formations de l'AFPA, qui a demandé à un autre formateur d'une autre région de nous donner des exercices. Avec deux autres personnes, nous avons appris Node et Express en autonomie, tout en nous aidant énormément lorsque quelqu'un trouvait une solution aux exercices. Ensuite, nous avons eu un professeur après ces deux mois, durant lesquels nous avons étudié le PHP et Symfony.
+Les personnes disent de moi que je suis honnête, sincère et toujours prêt à aider si je le peux.
+On me décrit généralement comme une personne honnête, sincère et toujours disposée à aider dès que possible.
+Mes proches me perçoivent comme quelqu'un d'honnête, sincère et toujours prêt à apporter son aide quand c'est nécessaire.
+description amicale
+perception proches
+avis amis
+image par amis
+feedback amical
+opinions des proches
+evaluation personnalite
+qualites reconnues
+attributs personnels
+impressions amicales
+perception sociale
+observations sociales
+feedback sur personnalite
+caracteristiques amicales
+evaluation par amis
+En un mot cela serait altruiste
+Parmi mes principaux atouts professionnels, je dirais que j’apprends très vite et que j’ai une excellente mémoire, ce qui me permet de m’adapter rapidement à de nouveaux environnements et technologies. Je suis également autonome dans mon travail, mais je sais aussi reconnaître quand il est nécessaire de demander de l’aide ou d’échanger avec mes collègues. J’aime également partager mes connaissances et aider quand c’est possible. Un autre avantage est ma capacité à gérer plusieurs tâches en même temps sans perdre le fil, ce qui me permet d’être efficace même dans des situations exigeantes.
+Si j’avais plusieurs propositions, je choisirais avant tout une entreprise où je peux apprendre et évoluer dans un environnement stimulant. Ce qui est important pour moi, c’est de pouvoir monter en compétences, être bien accompagné et travailler sur des projets intéressants qui correspondent à mon parcours. Je recherche aussi une entreprise qui a une bonne ambiance de travail, où l’échange et la collaboration sont mis en avant. Et un point essentiel pour moi est de pouvoir trouver un équilibre entre mes missions et mes contraintes personnelles. Étant en situation de RQTH, j’ai certaines contraintes horaires à respecter : un mercredi sur deux, en fonction du lieu de travail, je ne peux pas finir après 11h30, mais je peux reprendre après 18h. Un vendredi sur deux, je ne peux pas terminer plus tard que 16h. Si votre entreprise peut m’offrir cette opportunité d’apprentissage tout en prenant en compte ces ajustements, alors ce serait un choix évident pour moi. Bien sûr, je suis ouvert à en discuter pour trouver une organisation qui convienne à tous.
+Ma formation en développement web et web mobile m’a permis d’acquérir des compétences techniques solides, comme la conception et le développement d’applications, la gestion de bases de données et l’optimisation du code. J’ai aussi appris à travailler en équipe sur des projets concrets, en appliquant des méthodologies comme Agile ou Scrum, ce qui est essentiel en entreprise. En plus de mes compétences techniques, mon parcours en commerce m’a donné une bonne capacité de communication et d’adaptation, ce qui me permet de bien comprendre les besoins des clients et de travailler efficacement avec différentes équipes. Grâce à ces différentes expériences, je peux m’adapter rapidement à un environnement professionnel, apprendre de nouvelles technologies et contribuer efficacement aux projets.
+Parmi mes qualités, je suis persévérant, ce qui me permet de ne jamais abandonner face à un problème. Je suis aussi altruiste, j’aime aider quand je le peux et partager mes connaissances. Enfin, j’ai une grande capacité d’apprentissage, ce qui me permet de m’adapter rapidement et d’évoluer dans mon travail. Concernant mes défauts, je n’aime pas la malhonnêteté, ce qui peut parfois me rendre intransigeant dans certaines situations. De plus, lorsque je fais face à un problème, j’ai tendance à vouloir absolument trouver la solution, ce qui peut me pousser à y consacrer beaucoup de temps. Cependant, j’apprends à mieux gérer mon temps et mes priorités pour être plus efficace.
+Une qualité que j’aimerais encore améliorer est ma capacité à simplifier mes explications techniques. Lorsque j’explique un concept ou une solution, surtout à des personnes qui ne sont pas développeurs, j’ai parfois tendance à rentrer trop dans les détails techniques au lieu d’aller à l’essentiel. Je travaille donc à m’adapter à mon interlocuteur et à rendre mes explications plus claires et accessibles, notamment en utilisant des analogies ou en allant droit au but quand c’est nécessaire.
+Je suis très persévérant, au point de vouloir tout résoudre seul avant de demander de l’aide. J’apprends à mieux équilibrer autonomie et travail d’équipe. Je peux aussi être exigeant avec moi-même, cherchant toujours à optimiser mon travail. Je veille à ne pas perdre trop de temps sur des détails et à privilégier l’efficacité. Enfin, je n’aime pas la malhonnêteté, ce qui peut me rendre intransigeant. J’apprends à mieux prendre du recul et à adapter ma communication en fonction des situations.
+Oui, j’aime le travail en équipe, car il permet d’échanger des idées et de progresser plus vite. Je suis autonome, mais je sais aussi collaborer efficacement, surtout en développement, où le partage de connaissances est essentiel. Lors de ma formation, j’ai travaillé sur des projets de groupe, ce qui m’a appris à communiquer et m’adapter aux autres.
+Je n’ai pas de préférence stricte, je sais travailler aussi bien seul qu’en équipe. En autonomie, je suis efficace et organisé, mais j’apprécie aussi la collaboration, surtout en développement, où échanger avec ses collègues permet d’apprendre et d’améliorer son travail. Je m’adapte facilement selon les besoins du projet.
+En groupe, j’aime travailler de façon organisée et collaborative. Je m’adapte facilement aux besoins de l’équipe et je peux aussi bien suivre des directives que prendre des initiatives si nécessaire. Je privilégie une bonne communication pour éviter les malentendus et assurer une répartition efficace des tâches. En cas de désaccord, je cherche à écouter les points de vue de chacun et à trouver une solution constructive. Mon objectif est toujours de contribuer positivement, en apportant mes compétences et en aidant l’équipe à avancer efficacement.
+Je suis disponible à partir de début avril et prêt à commencer dès cette date. D’ici là, je peux également anticiper mon intégration en échangeant avec l’équipe si besoin.
+Étant en alternance, je m’attends à une rémunération conforme au SMIC conventionnel, en prenant en compte mon statut d’adulte et ma RQTH. Je suis bien sûr ouvert à en discuter.
+Étant en alternance, je m’attends à une rémunération conforme au SMIC conventionnel, en prenant en compte mon statut d’adulte et ma RQTH. Bien sûr, je suis ouvert à en discuter en fonction de la convention collective et des conditions spécifiques de l’entreprise.
+La décision la plus difficile que j’ai prise a été de quitter mon poste chez Darty pour me reconvertir en développement web. C’était un choix compliqué, car j’avais une stabilité professionnelle, mais je savais que pour évoluer et m’épanouir, je devais prendre ce risque. Avec du recul, je suis convaincu d’avoir fait le bon choix, car je suis passionné par ce domaine et motivé à progresser.
+Je suis quelqu’un de calme et professionnel, donc il est rare que je perde mon sang-froid. Cependant, le manque de respect peut être une source de frustration. Dans ces situations, je préfère prendre du recul, analyser le contexte et privilégier une communication posée et constructive pour éviter toute escalade.
+On me décrit souvent comme quelqu’un de persévérant, fiable et toujours prêt à aider. Mes collègues apprécient ma capacité d’apprentissage rapide et ma manière de gérer les situations avec calme et sérieux. On me reconnaît aussi un côté altruiste, car j’aime partager mes connaissances et apporter mon aide quand c’est possible.
+Je m’entends bien avec la plupart des personnes, mais j’ai plus de mal avec ceux qui sont malhonnêtes ou irrespectueux. Pour autant, même dans ces situations, je garde une attitude professionnelle, je privilégie le dialogue et la communication posée pour éviter les tensions et trouver un terrain d’entente.
+Je me lie facilement avec les personnes respectueuses, ouvertes d’esprit et communicatives. J’apprécie les collègues qui aiment échanger, partager leurs connaissances et travailler dans une bonne ambiance. L’essentiel pour moi, c’est la bienveillance et la collaboration, car cela permet d’évoluer ensemble plus efficacement.
+Pour moi, une bonne ambiance de travail repose sur le respect, la communication et l’entraide. Un cadre motivant, c’est une équipe où chacun peut échanger librement, s’entraider et évoluer ensemble dans un climat sain et bienveillant. J’aime aussi contribuer à cette ambiance en gardant une attitude positive et en favorisant la collaboration.
+En dehors du travail, j’aime jouer de la guitare et écouter de la musique, c’est une vraie passion pour moi. Je suis aussi amateur de cinéma et j’aime me tenir informé en lisant des actualités générales et sur la cryptomonnaie.
+Mes principaux centres d’intérêt sont la musique, notamment la guitare, le cinéma et la lecture d’actualités générales et sur la cryptomonnaie. J’aime aussi approfondir mes connaissances sur ces sujets et découvrir de nouvelles choses qui m’inspirent.
+Je ne vais plus trop au cinéma, mais je regarde beaucoup de films sur des plateformes comme Prime Video et Netflix. J'apprécie presque tous les types de films, avec une préférence pour les histoires vraies.
+Avec ma fille, nous partons généralement à la maison de campagne de mes parents dans l’Yonne. C’est l’occasion de me ressourcer, profiter du calme et passer du temps en famille, tout en retrouvant une partie de mes proches.
+Je consulte les actualités plusieurs fois par jour sur internet, principalement pendant mes temps de  repos. Je m’intéresse à l’actualité générale et aux sujets liés à la technologie et à la cryptomonnaie, en privilégiant les sources d’information en ligne.
+Je ne lis pas de livres, mais je consulte énormément d’articles sur internet, principalement sur l’actualité générale, la technologie et la cryptomonnaie. Cela me permet de rester informé en temps réel et d’approfondir mes connaissances sur les sujets qui m’intéressent.
+L'événement historique qui m'a le plus marqué est le 11 septembre 2001. C'était un moment de barbarie et de choc mondial, qui a profondément impacté la société et changé la vision du monde sur la sécurité et les conflits internationaux.
+Oui, j’ai été président du CIQ La Grognarde pendant deux ans. Mon rôle était de faire le lien entre les riverains, la mairie et la métropole pour remonter les problématiques du quartier et chercher des solutions adaptées. Cette expérience m’a appris à communiquer avec différentes parties prenantes, gérer des demandes variées et coordonner des actions collectives.
+Grâce à ma formation en développement web et web mobile, j’ai acquis des compétences solides en conception, intégration et résolution de problèmes techniques. Mon expérience passée dans différents domaines m’a appris à m’adapter rapidement, travailler en équipe et gérer des situations variées avec rigueur. Ma persévérance, ma capacité d’apprentissage rapide et ma motivation seront des atouts pour réussir et contribuer efficacement à ce poste.
+J'ai un niveau B1 en anglais', ce qui me permet de tenir une conversation simple et de comprendre des documents techniques.
+Oui, je suis facile à manager, car je sais m’adapter aux directives, tout en étant autonome et réceptif aux retours constructifs. J’apprécie un management clair et participatif, où l’échange et la communication permettent d’avancer efficacement. Je suis aussi ouvert aux critiques, car elles me permettent de m’améliorer et de progresser dans mon travail.
+Je ne crains pas l’ennui, car dans mon travail, il y a toujours des défis à relever et des compétences à approfondir. Même dans des tâches répétitives, j’aime trouver des moyens d’optimiser mon travail et d’apprendre de nouvelles choses. De plus, l’environnement du développement est en constante évolution, ce qui me motive à rester curieux et à progresser en continu.
+Un week-end sur deux, j’ai ma fille, donc nous passons du temps ensemble en faisant ses devoirs, en jouant à la console et en regardant des films. Quand je n’ai pas ma fille, j’en profite pour faire de la musique et me perfectionner sur les langages de développement, afin de continuer à progresser dans mon apprentissage.
+Je m'appelle Sylvain Regnier, j'ai 44 ans. Je suis père d'une fille de 11 ans, célibataire, et j'ai un droit de garde élargi. J'ai aussi un frère qui est directeur adjoint d'une école en Angleterre.
+J'ai toujours été passionné par le monde du développement, et en utilisant mon CPF et grâce à Transition Pro PACA, j'ai pu bénéficier de cette formation diplômante.
+PHP est un langage de script côté serveur principalement utilisé pour développer des sites web dynamiques.
+Un bloc de code PHP est délimité par les balises d'ouverture <?php et de fermeture ?> qui indiquent au serveur web où débute et finit le traitement du code PHP.
+On peut utiliser echo ou print.
+echo peut afficher plusieurs paramètres et est légèrement plus rapide, tandis que print renvoie toujours 1 et peut être utilisé dans une expression.
+En PHP, une variable est un conteneur qui permet de stocker une valeur. Elle est déclarée en utilisant le symbole dollar ($) suivi d'un nom. Par exemple : $maVariable = "valeur";.
+En PHP, une variable se déclare en utilisant le symbole dollar ($) suivi du nom de la variable, puis en lui assignant une valeur. Par exemple : $maVariable = "valeur";
+Les types principaux sont : integer, float, string, boolean, array, object et null.
+Un tableau PHP permet de stocker plusieurs valeurs dans une même variable, soit de manière indexée, associative ou multidimensionnelle. Exemple : $tableau = array('valeur1', 'valeur2');
+Avec $array[] = valeur; ou la fonction array_push($array, valeur);
+En utilisant la syntaxe const NOM_CONSTANTE = valeur;.
+Un tableau indexé utilise des indices numériques (0, 1, 2…), tandis qu’un tableau associatif utilise des clés nommées pour accéder aux valeurs, rendant les données plus lisibles et explicites.
+Pour un tableau indexé : $array[indice], pour un tableau associatif : $array['clé'].
+Voici un exemple simple de boucle for en PHP : for ($i = 0; $i < 10; $i++) { echo $i; } Cette boucle affiche les nombres de 0 à 9.
+Une boucle for est une structure de contrôle qui répète un bloc de code un nombre déterminé de fois.
+Une boucle while est une structure de contrôle qui s’exécute tant qu’une condition reste vraie.
+Une boucle while en PHP permet de répéter des instructions tant qu'une condition est vraie. Exemple : while ($i < 10) { echo $i; $i++; }.
+Une boucle spécialement conçue pour parcourir les éléments d’un tableau.
+foreach ($tableau as $valeur) {
+    echo $valeur;
+}
+Une fonction en PHP est un bloc de code nommé réutilisable, qui peut recevoir des paramètres, effectuer une tâche spécifique et retourner une valeur.
+En les définissant dans la déclaration de la fonction et en les passant lors de l’appel, par exemple :
+
+function addition($a, $b) {
+    return $a + $b;
+}
+En PHP, le mot-clé return permet à une fonction de renvoyer une valeur à l'endroit où elle a été appelée. Exemple : return $resultat;
+En utilisant le mot-clé function, par exemple :
+
+function maFonction() {
+    // code
+}
+Une variable locale est une variable définie à l'intérieur d'une fonction et accessible uniquement dans cette fonction.
+Une variable globale en PHP est déclarée en dehors de toute fonction, ce qui la rend accessible partout dans le script, y compris à l'intérieur des fonctions en utilisant le mot-clé global.
+En utilisant le mot-clé global ou en accédant au tableau $GLOBALS.
+Pour inclure un fichier externe en PHP, on utilise l'instruction include suivie du nom du fichier à inclure, par exemple : include 'fichier.php';.
+include génère un avertissement si le fichier n’est pas trouvé, alors que require provoque une erreur fatale et arrête le script.
+Un outil web qui permet de gérer les bases de données MySQL via une interface graphique.
+Pour inclure un fichier une seule fois en PHP, on utilise include_once ou require_once. Exemple : include_once 'fichier.php'; ou require_once 'fichier.php';.
+PDO est une extension qui permet de se connecter et d’interagir de manière sécurisée avec plusieurs types de bases de données.
+En créant une instance de PDO, par exemple :
+
+new PDO('mysql:host=localhost;dbname=nom_de_la_base', 'utilisateur', 'motdepasse');
+Une requête préparée en PHP est une instruction SQL précompilée qui permet de lier des paramètres à la requête, renforçant la sécurité contre les injections SQL.
+En utilisant des requêtes préparées et en liant les paramètres.
+En utilisant des requêtes préparées et en liant les paramètres.
+Apache est un serveur web HTTP open source très répandu, utilisé pour héberger et servir des sites web en répondant aux requêtes des navigateurs.
+En utilisant :
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+La configuration de PHP peut être modifiée soit globalement en éditant le fichier php.ini, soit temporairement via la fonction ini_set() dans le code PHP.
+Une session est un mécanisme qui permet de stocker des informations sur l'utilisateur durant sa navigation sur le site.
+C’est le fichier de configuration principal de PHP.
+En assignant une valeur à une clé dans le tableau $_SESSION, par exemple :
+
+$_SESSION['user'] = 'Sylvain';
+Pour démarrer une session en PHP, il faut utiliser la fonction session_start() au tout début du script, avant toute sortie vers le navigateur. Exemple : session_start();
+Un petit fichier stocké sur le navigateur de l'utilisateur permettant de retenir des informations entre les visites.
+Pour créer un cookie en PHP, on utilise la fonction setcookie(). Exemple : setcookie('nomDuCookie', 'valeur', time()+3600); permet de créer un cookie nommé 'nomDuCookie' valable pendant 1 heure.
+En utilisant session_destroy().
+La superglobale $_GET en PHP est un tableau associatif contenant les paramètres passés dans l'URL à l'aide de la méthode GET, ce qui permet d'accéder facilement aux données transmises via une requête HTTP.
+Grâce à la superglobale $_COOKIE.
+GET envoie les données via l’URL de manière visible, ce qui est moins sécurisé, tandis que POST transmet les données dans le corps de la requête HTTP, permettant une meilleure sécurité et gestion des données sensibles.
+Un tableau regroupant les données provenant de $_GET, $_POST et $_COOKIE.
+Un tableau associatif qui contient les données envoyées via la méthode POST dans un formulaire.
+La superglobale $_GET en PHP est un tableau associatif contenant les paramètres envoyés dans l’URL via la méthode GET, typiquement utilisée pour récupérer des données non sensibles ou visibles publiquement.
+Un tableau contenant des informations sur l'environnement serveur et l'exécution du script.
+La fonction empty() en PHP permet de tester si une variable est vide, c’est-à-dire si elle vaut null, '', 0, '0', false ou un tableau vide. Elle retourne true dans ces cas-là.
+Elle affiche des informations détaillées sur une variable (type et valeur).
+Elle vérifie si une variable est définie et n'est pas null.
+La fonction print_r() en PHP permet d’afficher de façon lisible le contenu d’une variable, notamment utile pour visualiser facilement la structure des tableaux ou des objets.
+Elle affiche un message (optionnel) et arrête l'exécution du script.
+Elle vérifie si une variable est définie et n'est pas null.
+En utilisant des requêtes préparées et en liant les paramètres.
+Une exception en PHP est un objet qui représente une erreur ou une situation exceptionnelle, permettant d'interrompre le flux normal d'exécution et de gérer proprement les erreurs à l'aide des blocs try/catch.
+En étendant la classe Exception, par exemple :
+
+class toto extends Exception { }
+Pour vérifier si un fichier existe en PHP, on utilise la fonction file_exists(). Exemple : file_exists('nomFichier.txt') renvoie true si le fichier existe, sinon false.
+Elle ouvre un fichier pour lecture ou écriture selon le mode spécifié.
+Elle lit le contenu d’un fichier et le retourne sous forme de chaîne.
+La fonction mkdir() en PHP permet de créer un nouveau dossier. Exemple : mkdir('nouveauDossier'); crée un dossier nommé 'nouveauDossier'.
+Elle supprime un répertoire vide.
+En utilisant diverses fonctions comme strlen(), substr(), strpos(), str_replace().
+La fonction strlen() en PHP retourne la longueur d'une chaîne de caractères. Exemple : strlen('Bonjour') retournera 7.
+Elle extrait une partie d’une chaîne, à partir d’un index et pour une longueur donnée.
+Elle remplace toutes les occurrences d’une sous-chaîne par une autre dans une chaîne donnée.
+La fonction json_encode() en PHP transforme une variable PHP, souvent un tableau ou un objet, en une chaîne au format JSON, utile pour les échanges de données avec JavaScript ou via des API.
+Elle convertit une chaîne JSON en une variable PHP (tableau ou objet).
+La fonction strtolower() en PHP convertit tous les caractères d'une chaîne en minuscules. Exemple : strtolower('Bonjour') renverra 'bonjour'.
+Elle met en majuscule le premier caractère d’une chaîne.
+Elle transforme une chaîne en majuscules.
+La fonction ucwords() en PHP met en majuscule la première lettre de chaque mot d'une chaîne. Exemple : ucwords('bonjour le monde') renverra 'Bonjour Le Monde'.
+Cela permet de conserver la valeur de la variable entre plusieurs appels de la fonction.
+En PHP, une classe est déclarée avec le mot-clé `class`, suivi du nom de la classe et d'accolades `{}` pour contenir ses propriétés et méthodes. Exemple :
+
+```php
+class MaClasse {
+    // Propriétés et méthodes ici
+}
+```
+Une structure qui permet de créer des objets regroupant des propriétés et des méthodes.
+Un mécanisme permettant à une classe (la classe enfant) d'hériter des propriétés et méthodes d'une autre classe (la classe parent).
+Un constructeur en PHP est une méthode spéciale nommée `__construct()`, qui est appelée automatiquement lors de l’instanciation d’un objet. Exemple :
+
+```php
+class MaClasse {
+    public function __construct() {
+        echo 'Objet créé';
+    }
+}
+
+$objet = new MaClasse(); // Affichera 'Objet créé'
+```
+Une instance d’une classe qui possède ses propres propriétés et méthodes.
+Ces mots-clés définissent l’accessibilité des propriétés et méthodes :
+
+- **public** : accessible de partout,
+- **protected** : accessible dans la classe et ses sous-classes,
+- **private** : accessible uniquement dans la classe où elles sont définies.
+L'abstraction en PHP permet de définir des classes et méthodes abstraites qui ne contiennent pas d'implémentation complète et doivent être définies dans les classes enfants. Exemple :
+
+```php
+abstract class Animal {
+    abstract public function crier(); // Méthode abstraite
+}
+
+class Chien extends Animal {
+    public function crier() {
+        return 'Wouf !';
+    }
+}
+
+$monChien = new Chien();
+echo $monChien->crier(); // Affiche 'Wouf !'
+```
+Un modèle architectural séparant la logique de l'application en trois parties :
+
+- **Modèle** : Gère les données et la logique métier.
+- **Vue** : Responsable de l'affichage et de l'interface utilisateur.
+- **Contrôleur** : Gère les requêtes de l'utilisateur et met à jour le modèle et la vue en conséquence.
+La fonction `in_array()` en PHP permet de vérifier si une valeur donnée existe dans un tableau. Elle retourne `true` si la valeur est trouvée, sinon `false`. Exemple :
+
+```php
+$fruits = ['pomme', 'banane', 'cerise'];
+if (in_array('banane', $fruits)) {
+    echo 'La banane est présente dans le tableau.';
+}
+```
+En utilisant le mot-clé new, par exemple :
+
+$objet = new MaClasse();
+Une bonne pratique pour écrire du code PHP sécurisé consiste à :
+
+- **Valider et assainir les entrées utilisateur** pour éviter les injections SQL ou XSS.
+- **Utiliser des requêtes préparées** avec PDO ou MySQLi pour interagir avec les bases de données.
+- **Désactiver l'affichage des erreurs en production** pour ne pas exposer d'informations sensibles.
+- **Gérer correctement les sessions et les cookies** avec des paramètres sécurisés (`HttpOnly`, `Secure`).
+- **Limiter les permissions des fichiers** et protéger les fichiers de configuration (`.env`, `config.php`).
+- **Utiliser HTTPS** pour sécuriser les échanges de données.
+- **Respecter les standards de codage** et appliquer des mises à jour régulières de PHP et de ses extensions.
+Bonjour , bienvenue sur mon ChatBot de pré-entretient
+Bienvenue sur mon chatbot dédié au pré-entretien, bonjour !
+Bonjour et merci d'utiliser mon chatbot de pré-entretien.
+Chaque expérience a été une occasion d'apprendre et de progresser, mais celle qui m’a laissé le meilleur souvenir est mon expérience chez Conforama. J’y ai découvert une vraie cohésion entre collègues et une ambiance de travail agréable, ce qui a largement compensé une rémunération moins avantageuse.
+Chez Darty, lors d'une période de test de deux ans, j'avais la responsabilité de valider les interventions chez les clients ainsi que les tickets d'incidents créés par l'équipe. Je devais également réaliser des contre-diagnostics en cas de doute. Cependant, après le rachat des clients Darty par Bouygues Télécom, j'ai évolué vers un poste de niveau 2, prenant en charge la gestion des tickets d'incidents.
+Malheureusement, Darty a transféré plusieurs services à Intelcia dans le cadre d’un transfert d'activités sur 15 mois, impliquant également le transfert de nos contrats. Ce changement a entraîné un déménagement vers un site trop éloigné de mon domicile, avec un télétravail quasi impossible. De plus, aucun Plan de Sauvegarde de l’Emploi (PSE) n’était proposé. Après discussion avec le médecin du travail, j’ai été déclaré inapte, ce qui m’a permis de me consacrer pleinement à ma reconversion en développement web. Aujourd’hui, je recherche une alternance afin d’appliquer mes compétences et de continuer à évoluer dans ce domaine qui me passionne.
+Je suis particulièrement fier d’avoir entrepris ma reconversion en développement web. Ce n’était pas évident de quitter un domaine où j’avais de l’expérience pour repartir de zéro, mais j’ai persévéré et obtenu mon titre RNCP. Durant ma formation, j’ai réalisé plusieurs projets, dont un site web complet en autonomie. Ce projet m’a conforté dans mon choix et m’a prouvé que j’étais capable d’apprendre et de m’adapter à un nouvel environnement technique. Toutefois, j’aurais aimé pouvoir le réaliser en équipe afin d’aller encore plus loin, par exemple en développant une application Android. Malheureusement, mes collègues étaient occupés avec leurs propres projets et n’étaient pas disponibles à ce moment-là. Cette expérience m’a donné encore plus envie de travailler en collaboration sur des projets concrets en entreprise.
+Honnêtement, chaque echec est une expérience et un apprentissage , et m’a apporté quelque chose d’utile. Par exemple, chez Darty, j’avais envisagé d’évoluer vers un poste de coordinateur, mais cela ne s’est finalement pas concrétisé. Plutôt que de le voir comme un échec, j’ai continué à développer mes compétences et cela m’a amené à explorer d’autres opportunités
+Je pars du principe que chaque problème a une solution, sauf dans le domaine médical où certaines limites existent. C’est pourquoi il est difficile pour moi de considérer un défi comme un obstacle insurmontable. Toutefois, un défi marquant dans ma carrière a été la gestion d’un dossier de réclamation complexe chez Conforama. Un client très mécontent n’avait pas reçu son ordinateur réparé, et après de nombreuses recherches, j’ai découvert qu’il avait été livré à une autre personne portant le même nom dans le même village. J’ai pris l’initiative de contacter cette personne, d’expliquer la situation et de collaborer avec La Poste pour récupérer l’ordinateur et le restituer à son propriétaire légitime. Cette situation m’a appris que la patience, la recherche d’informations et la communication sont essentielles pour trouver une solution adaptée à chaque problème.
+Mon ancien employeur dirait probablement que je suis un travailleur sérieux et persévérant. Il pourrait souligner ma capacité à gérer les situations complexes avec calme et méthode, ainsi que mon engagement à toujours chercher des solutions adaptées. Il apprécierait également mon esprit d’équipe et ma volonté d’aller au bout des tâches qui me sont confiées.
+Mon parcours professionnel est fortement axé sur la communication et l'informatique. J'ai occupé des postes de vendeur en informatique, mais aussi de dépanneur et monteur d'ordinateurs, aussi bien en direct qu'à distance par téléphone. J'ai également exercé en tant qu'administrateur réseau.
+Que ce soit chez Conforama ou Darty, on me confiait souvent les dossiers des clients très mécontents, car j’avais la capacité de gérer les situations tendues avec patience et efficacité. Mon objectif était toujours d’identifier une solution adaptée pour transformer leur insatisfaction en une expérience positive. Cette responsabilité m’a permis d’affiner mes compétences en écoute, gestion des litiges et résolution de problèmes, des atouts précieux dans n’importe quel domaine.
+Lors de ma dernière expérience chez Darty, j’ai commencé en tant que technicien hotliner. Par la suite, l’entreprise a créé un poste en test où, dans chaque équipe, une personne devait valider les interventions et les incidents signalés par les techniciens. Mon rôle était également de les assister en temps réel lors de leurs appels s'ils rencontraient des difficultés dans leur diagnostic. Bien que cela ne fût pas demandé, j’ai pris l’initiative d’analyser les difficultés rencontrées par chaque technicien afin de proposer des demandes de formation ciblées sur des points précis. Grâce à cette approche, le taux d’erreur de l’équipe est resté inférieur à 2 %, alors que la société exigeait un seuil de 8 %. Par la suite, lors de la vente de la DartyBox à Bouygues Télécom, j’ai intégré le niveau 2 technique. Mon rôle consistait à assister directement les techniciens sur le terrain lorsqu'ils rencontraient des problèmes ou avaient des questions techniques. Je devais également m’assurer que toutes les réparations et installations (fibre ou câble) étaient fonctionnelles. En parallèle, j’ai également joué un rôle de consultant lors des expertises techniques impliquant différents acteurs tels que Darty, France Télécom, Numericable et Bouygues Télécom. J’étais aussi chargé de la gestion des tickets d’incidents, en vérifiant si les problèmes étaient résolus ou si des diagnostics complémentaires étaient nécessaires pour approfondir la recherche de panne chez nos clients. Enfin, à la fin de mon parcours chez Darty, lorsque Bouygues Télécom a repris le service dans lequel je travaillais, j’ai intégré le service abonnement et la réparation à distance de tous les produits multimédias vendus chez Darty.
+Je suis persévérant et orienté solution, avec une solide expérience en analyse et résolution de problèmes, notamment chez Conforama et Darty. J'ai souvent résolu des dossiers clients complexes en comprenant l'origine des problèmes pour trouver des solutions durables. Aujourd'hui, je souhaite appliquer cette rigueur au développement web, en concevant des solutions efficaces pour les utilisateurs. En tant que junior, je m'intégrerai rapidement à l'équipe, apportant une approche dynamique et une forte envie d'apprendre. Grâce à ma formation, j'ai acquis de bonnes bases en développement et je m'adapterai facilement aux méthodes de l'entreprise. Rigoureux et curieux, je cherche constamment à m'améliorer et à optimiser mon travail. Je suis motivé à participer activement aux projets, en posant les bonnes questions et en proposant des idées pour résoudre des problèmes techniques avec l'équipe.
+Je suis immédiatement opérationnel sur les langages PHP, HTML et JavaScript, ainsi que sur les frameworks Symfony et Bootstrap. Actuellement, je complète mes compétences en m’auto-formant sur Python, notamment dans le cadre du développement web avec Flask. D’ailleurs, ce chatbot a été conçu avec Python et Flask, ce qui me permet de mieux comprendre son fonctionnement et d’approfondir mes compétences dans ce domaine.
+Je suis quelqu’un d’autonome et d’adaptable, mais pour réussir pleinement dans ce poste, j’apprécierais un environnement où je peux avoir des échanges réguliers avec mes collègues et mes encadrants. Un soutien sous forme de feedbacks et de conseils me permettrait de progresser plus rapidement et de m’assurer que je réponds aux attentes de l’entreprise. J’aime apprendre par la pratique, donc avoir accès à des ressources, des bonnes pratiques ou des documentations internes serait également un atout pour monter en compétences efficacement.
+Dans mon travail, j’adopte une approche analytique et pragmatique. J’aime comprendre en profondeur un problème avant de proposer une solution, ce qui me permet de gagner du temps et d’éviter les erreurs. Je suis aussi très organisé et méthodique, ce qui m’aide à structurer mon travail, notamment en développement web. Par exemple, je commence toujours par planifier les étapes du projet, vérifier la documentation existante, et ensuite, je code en respectant les bonnes pratiques. Enfin, j’accorde une grande importance à l’apprentissage continu. Je me forme régulièrement sur de nouvelles technologies et je prends le temps d’approfondir mes connaissances pour être toujours plus performant.
+Je me considère comme une personne productive. Dans tous les postes que j’ai occupés, j’ai toujours respecté mes objectifs en temps et en heure. Ma productivité repose sur une bonne organisation et une gestion efficace des priorités. Je structure mon travail en identifiant les tâches urgentes et importantes, ce qui me permet d’optimiser mon temps. J’utilise également des méthodes comme la planification et le suivi des tâches pour éviter les pertes de temps et rester concentré. De plus, je sais m’adapter aux imprévus tout en maintenant un bon niveau d’efficacité. Enfin, je veille à travailler de manière rigoureuse tout en cherchant constamment à m’améliorer pour être encore plus performant.
+Oui, je suis une personne organisée et méthodique. Pour gérer efficacement mon travail, je commence toujours par identifier les priorités et structurer mes tâches en fonction de leur urgence et de leur importance. J’utilise différents outils et méthodes pour optimiser mon organisation, comme les to-do lists, les tableaux de suivi et les plannings, afin de ne rien oublier et de gérer mon temps efficacement. Je sais aussi m’adapter aux imprévus tout en maintenant une bonne gestion des priorités. Mon objectif est toujours d’être efficace et de livrer un travail de qualité dans les délais impartis.
+J’ai déjà occupé des rôles de supervision et de gestion d’équipe dans mes expériences passées. Chez Conforama, j’encadrais une équipe de 10 personnes, assurant la coordination des tâches et la gestion des éventuels problèmes rencontrés. Mon rôle était de veiller à la bonne organisation du travail et au respect des objectifs fixés. Chez Sécurifrance, j’étais responsable de 9 personnes en journée et 5 la nuit. J’assurais la supervision des équipes, la répartition des missions et la gestion des urgences. Ce poste m’a permis de développer mes compétences en prise de décision, communication et gestion des priorités. Grâce à ces expériences, j’ai appris à m’adapter aux différents profils, à anticiper les besoins et à assurer un bon fonctionnement au sein d’une équipe. J’apprécie le travail collaboratif et je sais motiver mes collègues pour atteindre nos objectifs communs.
+Je pense avoir de bonnes compétences en négociation, notamment grâce à mes expériences en gestion de clients mécontents et en supervision d’équipes. Par exemple, chez Darty et Conforama, on me confiait souvent les dossiers les plus complexes, notamment des réclamations clients difficiles. Mon approche consistait à écouter attentivement, analyser les faits et proposer une solution qui soit équilibrée et satisfaisante pour le client tout en respectant les règles de l’entreprise. Chez Sécurifrance, en tant que chef de poste, j’ai souvent dû gérer des situations délicates entre les agents et les clients, ou entre les équipes elles-mêmes. Dans ces cas, il était essentiel de trouver un compromis en tenant compte des attentes de chacun, sans céder à la pression. Ma stratégie repose sur l’écoute active, la recherche d’un terrain d’entente et l’argumentation basée sur des faits. J’aborde une négociation avec calme et logique, en gardant à l’esprit que l’objectif est de trouver une solution gagnant-gagnant.
+Oui, je pense avoir une certaine autorité naturelle, mais je l’exerce avant tout à travers la communication et l’explication des consignes. Pour moi, une directive est bien suivie lorsqu’elle a du sens pour ceux qui doivent l’appliquer. J’accorde une grande importance au fait d’expliquer clairement les attentes, et si nécessaire, de réexpliquer en adaptant mon discours pour m’assurer que tout le monde comprenne bien les enjeux et les objectifs. Je ne crois pas en l’autorité rigide, mais plutôt en un leadership basé sur la clarté, la pédagogie et la collaboration. Lorsque les personnes comprennent pourquoi elles doivent faire quelque chose et qu’elles se sentent impliquées, elles sont naturellement plus engagées. Cette approche me permet d’être respecté dans mon travail et de diriger une équipe efficacement, tout en maintenant une ambiance constructive et motivante.
+Pour réussir dans ce poste, plusieurs compétences sont essentielles. Tout d’abord, il est indispensable d’avoir une bonne capacité d’adaptation et d’apprentissage, car le domaine du développement évolue constamment avec de nouvelles technologies et méthodologies. L’organisation et la rigueur sont primordiales pour structurer son travail, assurer la qualité du code et respecter les délais fixés sur les projets. Un bon développeur doit aussi posséder un esprit d’analyse et de résolution de problèmes, afin d’identifier rapidement les erreurs, optimiser les performances et garantir le bon fonctionnement des applications. Enfin, le travail en équipe et la communication sont des aspects clés, car un développeur doit souvent collaborer avec d’autres membres de l’équipe, comprendre les besoins métier et être capable d’expliquer ses choix techniques de manière claire. Grâce à ma formation et à mes projets personnels, j’ai pu développer ces compétences et je suis prêt à les mettre en pratique en entreprise.
+Dans ce poste, une journée type s’organiserait autour de plusieurs missions essentielles au développement et à l’amélioration des projets. Je commencerais par analyser les tâches prioritaires et consulter les tickets ou demandes en cours, afin de planifier efficacement ma journée. Ensuite, je travaillerais sur le développement de nouvelles fonctionnalités, l’optimisation du code ou la correction de bugs selon les besoins du projet. Les échanges avec l’équipe seraient également un élément clé de la journée, que ce soit à travers des réunions pour faire le point sur l’avancement des tâches, des sessions de revue de code ou des discussions pour trouver les meilleures solutions techniques. Je consacrerais aussi du temps à la veille technologique et à l’apprentissage, afin de rester à jour sur les bonnes pratiques et les nouvelles tendances du développement. Enfin, en fin de journée, je ferais un bilan sur les avancées et organiserais les prochaines étapes pour optimiser mon travail et celui de l’équipe.
+Pour moi, la réussite, c’est trouver un équilibre entre vie professionnelle et vie personnelle, tout en ayant la possibilité d’évoluer et de progresser dans mon métier. C’est aussi savoir que mon travail a un impact positif, qu’il me permet d’apprendre et de m’épanouir tout en maintenant une bonne qualité de vie.
+La personne qui m’a le plus marqué est ma directrice chez Conforama, Mme Collin. Pendant tout mon temps là-bas, je ne l’ai jamais vue élever la voix ou manquer de respect à qui que ce soit. Elle savait communiquer avec son équipe, donner du sens aux décisions, même les plus difficiles. Grâce à elle, on accomplissait notre travail avec motivation et sourire, car on comprenait l’objectif derrière chaque action. C’est un modèle de management bienveillant et efficace que j’apprécie beaucoup.
+Au travail, je ne supporte pas le manque de respect, la malhonnêteté et le manque de communication. Un bon environnement de travail repose sur la transparence, la collaboration et le respect mutuel. Quand ces valeurs sont présentes, tout le monde peut travailler efficacement et sereinement.
+Je ne prends jamais de risques sans réflexion. Tous les risques que je prends sont mesurés et réfléchis, et j’en assume pleinement la responsabilité. Avant de prendre une décision, j’évalue toujours les bénéfices et les conséquences, afin de minimiser l’incertitude et d’assurer un choix éclairé.
+Mon poste idéal serait un emploi stimulant, où je pourrais mettre en pratique mes compétences en développement tout en continuant à apprendre et à évoluer. J’apprécie un environnement collaboratif et bienveillant, où l’on peut échanger des idées, progresser en équipe et relever des défis techniques. Un poste qui me permettrait d’avoir un impact réel sur les projets, tout en maintenant un équilibre entre vie professionnelle et personnelle, serait parfait pour moi.
+Mon âge n’est pas un frein, bien au contraire, il est un atout. Grâce à mon parcours, j’ai acquis de la maturité, une forte capacité d’adaptation et une approche méthodique du travail. Je suis aussi curieux et toujours en apprentissage, ce qui me permet de m’adapter aux nouvelles technologies et aux évolutions du métier. Mon objectif est d’apporter mon expérience tout en continuant à progresser.
+Chaque poste a ses défis, mais je les vois comme des opportunités d’apprentissage et de progression. Si une contrainte se présente, je m’adapterai en travaillant méthodiquement et en échangeant avec mes collègues pour trouver des solutions. Mon objectif est de monter en compétences rapidement et de répondre efficacement aux exigences du poste.
+Oui, comme tout le monde, j’ai déjà connu des moments de doute, notamment lors de ma reconversion en développement web. Changer de domaine après plusieurs années d’expérience était un défi, mais j’ai su rester motivé et persévérant, en me concentrant sur mon apprentissage et mon évolution. Aujourd’hui, ces doutes m’ont permis de gagner en confiance et de confirmer que j’ai fait le bon choix.
+Ce qui me motive au quotidien, c’est l’apprentissage continu et l’évolution. J’aime relever des défis techniques, approfondir mes compétences et voir mes efforts aboutir à des résultats concrets. Sur le plan personnel, ma motivation vient aussi du fait de trouver un équilibre entre travail et vie privée, en exerçant un métier qui me passionne et dans lequel je peux progresser et m’épanouir.
+Oui, je suis en recherche active et j’ai eu quelques échanges avec d’autres entreprises. Cependant, je prends le temps de trouver une alternance qui correspond à mon projet professionnel et qui prend en compte ma RQTH, afin de travailler dans un environnement adapté où je pourrai développer pleinement mes compétences.
+Mon parcours professionnel est varié, avec une forte expérience en informatique et relation client. J’ai travaillé plus de 16 ans chez Darty en tant que technicien hotliner niveau 2, où j’ai développé des compétences en diagnostic, assistance technique et gestion des incidents. J’ai également occupé des postes en réseau, vente informatique et coordination technique, ce qui m’a permis d’acquérir une grande capacité d’adaptation et un bon sens du service client. Aujourd’hui, après ma reconversion en développement web et web mobile, je souhaite poursuivre mon évolution dans ce domaine en intégrant une alternance pour continuer à monter en compétences et appliquer mes connaissances en entreprise.
+Dans un an, j’aimerais avoir gagné en autonomie sur mes missions et être capable de contribuer activement aux projets de l’équipe. Mon objectif est d’approfondir mes compétences techniques, de m’intégrer pleinement et de monter en compétences pour apporter une vraie valeur ajoutée à l’entreprise.
+Les deux aspects sont intéressants et complémentaires. J’aime établir un plan pour structurer un projet et anticiper les étapes, mais je prends aussi plaisir à le mettre en œuvre pour voir le travail aboutir concrètement. Idéalement, je préfère un poste où je peux participer à la réflexion tout en étant impliqué dans l’exécution.
+Pour réussir dans ce poste, un accompagnement progressif serait idéal. Au départ, j’aimerais une présentation des outils, des processus et des projets en cours, ainsi que la possibilité d’échanger avec l’équipe pour bien comprendre les attentes. Je suis aussi autonome et curieux, donc après cette phase d’intégration, je serai capable de monter en compétences rapidement et d’apporter ma contribution.
+J’ai rencontré plusieurs défis professionnels, mais l’un des plus marquants a été lors de mon travail chez Darty, où j’ai dû gérer des clients très mécontents et des dossiers techniques complexes. Grâce à ma patience, mon sens de l’écoute et ma capacité à trouver des solutions, j’ai réussi à transformer ces situations difficiles en expériences positives, en apportant des résolutions adaptées et en améliorant la satisfaction client. De manière générale, je vois chaque difficulté comme une opportunité d’apprentissage et je m’efforce toujours de garder mon calme et de trouver une solution efficace.
+Je me sens à l’aise dans un environnement structuré mais dynamique, où je peux travailler de manière autonome tout en collaborant avec une équipe. J’apprécie particulièrement les missions qui demandent de la réflexion, de la résolution de problèmes et un apprentissage continu. Je suis aussi à l’aise lorsqu’il s’agit de m’adapter à de nouvelles situations, relever des défis techniques et trouver des solutions efficaces.
+Chaque expérience m’a apporté quelque chose, mais le poste où j’ai pris le moins de plaisir était celui où les tâches étaient trop répétitives et où il y avait peu d’évolution possible. J’ai besoin d’un environnement où je peux apprendre, relever des défis et apporter ma valeur ajoutée. C’est aussi pour cela que je me suis tourné vers le développement, un domaine en constante évolution qui me motive.
+Pour être pleinement efficace, j’ai besoin d’un environnement structuré et collaboratif, où la communication est fluide et les objectifs bien définis. Un manque d’organisation, un manque de clarté dans les missions peuvent nuire à ma motivation. Cependant, je sais m’adapter et trouver des solutions pour travailler efficacement, même face à certaines contraintes.
+C
+h
+e
+z
+
+D
+a
+r
+t
+y
+,
+
+j
+’
+a
+i
+
+a
+p
+p
+r
+i
+s
+
+à
+
+i
+d
+e
+n
+t
+i
+f
+i
+e
+r
+
+e
+t
+
+r
+é
+s
+o
+u
+d
+r
+e
+
+r
+a
+p
+i
+d
+e
+m
+e
+n
+t
+
+d
+e
+s
+
+p
+r
+o
+b
+l
+è
+m
+e
+s
+
+t
+e
+c
+h
+n
+i
+q
+u
+e
+s
+
+e
+n
+
+é
+t
+a
+n
+t
+
+e
+n
+
+c
+o
+n
+t
+a
+c
+t
+
+d
+i
+r
+e
+c
+t
+
+a
+v
+e
+c
+
+l
+e
+s
+
+u
+t
+i
+l
+i
+s
+a
+t
+e
+u
+r
+s
+.
+
+C
+e
+t
+t
+e
+
+e
+x
+p
+é
+r
+i
+e
+n
+c
+e
+
+m
+’
+a
+
+m
+o
+t
+i
+v
+é
+
+à
+
+m
+e
+
+r
+e
+c
+o
+n
+v
+e
+r
+t
+i
+r
+
+v
+e
+r
+s
+
+l
+e
+
+d
+é
+v
+e
+l
+o
+p
+p
+e
+m
+e
+n
+t
+
+w
+e
+b
+
+e
+t
+
+m
+o
+b
+i
+l
+e
+
+p
+o
+u
+r
+
+c
+o
+m
+b
+i
+n
+e
+r
+
+e
+x
+p
+e
+r
+t
+i
+s
+e
+
+t
+e
+c
+h
+n
+i
+q
+u
+e
+
+e
+t
+
+s
+e
+r
+v
+i
+c
+e
+
+c
+l
+i
+e
+n
+t
+.
+Chez Brice j'étais vendeur en pret a porter masculin sur un contrat de 15 heures par semaines mais je faisais en moyenne 20 heures et en meme temps j'était en 1er année deug art du spectacle , mes attributions étaient de vendre , mettre en rayon ,ranger prendre les mesures pour les retouches des costumes , j'avais eu cet emploi apres un stage passé pendant mon baccalauréat
+J'ai été chef de poste en sécurité incendie pour Sécurifrance, et en parallèle, j'étais en deuxième année de DEUG Arts du Spectacle. Ce poste m'offrait un contrat de 35 heures réparties sur 3 jours, ce qui me permettait de poursuivre mes études tout en travaillant, et d'étudier pendant mes heures libres. Mon employeur ne voyait aucun inconvénient, tant que le travail était accompli. En tant que chef de poste, je supervisais 11 personnes, de jour comme de nuit. Mon rôle consistait à signaler toute anomalie, à surveiller les alarmes incendie et à vérifier que les rondes effectuées par les agents étaient réalisées correctement.
+Après avoir arrêté mon DEUG, je suis donc partie dans un domaine qui m'intéresse : l'informatique. Chez SOFI Informatique, j'étais technicien hotliner réseau. Mon travail consistait à assurer la maintenance du logiciel Sofi Gestion+ (créé en interne pour les papeteries), à effectuer des configurations réseau et serveur, à gérer des bases de données avec MySQL, à intégrer des données, ainsi qu'à répondre à diverses questions concernant le paramétrage de Windows et du serveur du client.
+J'ai été aiguilleur pour la SNCF. Mon travail consistait à faire sortir les trains des voies de garage pour les mettre sur le réseau ou l'inverse. L'équipe du matin sortait 5 trains par jour des voies de garage vers le réseau ferré, l'équipe d'après-midi rentrait 2 trains et l'équipe de nuit rentrait 3 trains. J'étais également présent en cas d'accident grave dans mon secteur.
+Au départ, chez Conforama, j'ai été recruté en tant que technicien hotliner. Très rapidement, au vu de mon expérience, il m'a été proposé le poste de coordinateur. Ce poste consistait à gérer une équipe de 12 personnes, à vérifier les interventions demandées par les techniciens pour nos clients et à identifier des pistes d'amélioration pour augmenter leur productivité. Je m'occupais également des litiges clients que les techniciens ne pouvaient pas résoudre.
+Chez Internity, j'étais technicien vendeur en multimédia. Mes attributions consistaient à établir des devis pour le montage de PC, à diagnostiquer et réparer les pannes, à assembler des PC, ainsi qu'à vendre des téléphones portables, leurs abonnements et des assurances.
+Chez Darty, j'ai été recruté comme technicien hotliner. Très rapidement, je suis passé technicien leader. Mon rôle était de valider le travail sur les interventions ainsi que les tickets réseau de l'équipe, de les aider au niveau technique et de vérifier que les procédures étaient respectées pendant les appels. Ce poste était un test, mais après avoir vendu la Dartybox à Bouygues Telecom, ce poste a été supprimé. Je suis ensuite passé au niveau 2 du service réseau, où je guidais les techniciens chez les clients et étais en relation directe avec différents intervenants sur le réseau, comme France Télécom et Numéricable. Je gérais également les incidents réseaux ainsi que les expertises entre les différents intervenants. Lorsque Bouygues Telecom a arrêté son contrat avec Numéricable et s'est lancé dans la fibre, j'ai fait technicien micro informatique, puis on m'a ajouté le multimédia. Enfin, Darty a restructuré ses services et a externalisé le pôle multimédia, et j'ai été reclassé au service abonnement de Darty.
+La programmation impérative décrit comment exécuter des opérations étape par étape, tandis que la programmation déclarative spécifie le résultat souhaité sans détailler les étapes d’exécution.
+Un algorithme est une série finie d’instructions ou d’étapes logiques permettant de résoudre un problème ou d’accomplir une tâche spécifique.
+La POO est un paradigme de programmation qui organise le code autour d’objets, regroupant données et comportements, et favorise l’héritage et l’encapsulation.
+L’héritage permet à une classe (sous-classe) de réutiliser, étendre ou modifier le comportement d’une autre classe (superclasse).
+Un langage compilé est transformé en code machine avant l’exécution, tandis qu’un langage interprété est lu et exécuté ligne par ligne par un interpréteur.
+L’encapsulation consiste à regrouper des données et leurs méthodes associées dans une même entité (classe) et à restreindre l’accès direct aux attributs pour protéger l’intégrité des données.
+Une fonction est un bloc de code réutilisable qui effectue une tâche spécifique et qui peut retourner une valeur après son exécution.
+Une procédure effectue des actions sans nécessairement retourner une valeur, tandis qu’une fonction renvoie une valeur après traitement.
+Une variable est un espace de stockage nommé qui contient une valeur pouvant être modifiée durant l’exécution du programme.
+Une variable locale est accessible uniquement dans le bloc ou la fonction où elle est définie, tandis qu’une variable globale est accessible dans l’ensemble du programme.
+Un tableau statique a une taille fixe définie à la compilation, alors qu’un tableau dynamique peut être redimensionné pendant l’exécution du programme.
+Une structure de contrôle permet de diriger le flux d’exécution du programme (par exemple, les boucles, les conditions).
+Une boucle « for » permet d’itérer sur une séquence de valeurs pour exécuter une série d’instructions de manière répétée. Par exemple, parcourir tous les éléments d’un tableau.
+Une instruction conditionnelle permet d’exécuter du code uniquement si une certaine condition est vraie (par exemple, l’instruction « if »).
+Le débogage est le processus de recherche et de correction des erreurs ou bugs dans un programme.
+On peut utiliser des environnements de développement intégrés (IDE) avec des débogueurs intégrés, des impressions dans la console (logs) ou des outils de profilage.
+Le versionnage de code consiste à utiliser des systèmes de gestion de versions comme Git pour suivre l’évolution du code, faciliter la collaboration et gérer les modifications.
+Le merge est l’opération qui combine les modifications apportées sur différentes branches dans une branche commune.
+En examinant manuellement les fichiers conflictuels, en décidant quelles modifications garder et en résolvant les conflits avant de valider le merge.
+Un commit est une sauvegarde enregistrée du code dans l’historique du dépôt, représentant un ensemble de changements apportés.
+Les tests unitaires permettent de vérifier que chaque partie du code fonctionne correctement et facilitent la détection et la correction d’erreurs lors de modifications ultérieures.
+Une API (Application Programming Interface) est un ensemble de règles et de protocoles permettant à différentes applications de communiquer entre elles.
+JSON est un format de données léger utilisé pour échanger des données entre un serveur et une application web.
+JSON est généralement plus léger et facile à lire pour les humains, tandis que XML est plus verbeux et structuré pour les documents hiérarchiques.
+Une base de données est un ensemble organisé de données structurées, souvent géré par un système de gestion de bases de données.
+Le SQL (Structured Query Language) est un langage utilisé pour interagir avec les bases de données relationnelles (interrogation, insertion, mise à jour, suppression de données).
+Une base relationnelle utilise des tables avec des relations strictes entre elles, tandis que les bases NoSQL sont souvent plus flexibles et adaptées aux données non structurées.
+Une jointure en SQL permet de combiner des enregistrements de deux ou plusieurs tables en se basant sur une condition commune entre elles.
+Un index est une structure de données qui améliore la vitesse de récupération des données dans une table, au détriment d’un coût supplémentaire lors des mises à jour.
+L’optimisation de requêtes SQL consiste à améliorer les performances des requêtes en réduisant le temps de réponse, par exemple en utilisant des index ou en réécrivant la requête.
+Un bug est une erreur ou un défaut dans le code qui provoque un comportement inattendu ou incorrect d’un programme.
+Les commentaires facilitent la compréhension, la maintenance et la collaboration sur le code en expliquant la logique et les intentions derrière certaines implémentations.
+Ils permettent de marquer des zones du code nécessitant des améliorations ou des ajouts futurs, facilitant ainsi la planification des tâches de développement.
+Un IDE est un logiciel qui regroupe des outils de développement comme un éditeur de code, un débogueur, un compilateur pour faciliter l’écriture et la gestion du code.
+Visual Studio Code, Eclipse, IntelliJ IDEA sont parmi les IDE les plus utilisés.
+Le contrôle de version permet de suivre les modifications, de faciliter la collaboration et de revenir à des versions antérieures en cas de problème.
+Un commit message efficace décrit clairement les changements apportés, les raisons de la modification et le contexte pour les autres membres de l’équipe.
+Elles facilitent la maintenance, améliorent la lisibilité et réduisent les risques d’erreurs, surtout dans des projets collaboratifs.
+La documentation technique décrit le fonctionnement du code, les architectures utilisées et les processus, ce qui facilite la compréhension et la maintenance du projet par d’autres développeurs.
+Une bibliothèque est un ensemble de fonctions et de ressources pré-écrites qui peut être intégré dans un projet pour faciliter le développement.
+Un framework est un ensemble d’outils et de conventions qui fournit une structure de base pour développer des applications, facilitant ainsi le développement et la maintenance.
+Une bibliothèque fournit des fonctionnalités à utiliser au besoin, tandis qu’un framework impose une architecture et contrôle le flux d’exécution de l’application.
+Une exception est une situation d’erreur ou d’anomalie détectée lors de l’exécution d’un programme qui peut être interceptée et traitée pour éviter un arrêt brutal.
+C’est une architecture d’API qui utilise les méthodes HTTP (GET, POST, PUT, DELETE) pour interagir avec des ressources identifiées par des URI.
+Pour évaluer la performance et l’efficacité du code, en particulier en termes de temps d’exécution et d’utilisation de la mémoire.
+En utilisant des blocs try/catch (ou équivalents selon le langage) pour capturer et traiter les erreurs de manière contrôlée.
+Ils améliorent la lisibilité, la cohérence et la maintenabilité du code, facilitant ainsi la collaboration entre développeurs.
+Le debugging est le processus de localisation et de correction des erreurs dans le code.
+Les logs permettent de suivre l’exécution du programme, d’identifier les erreurs et d’analyser le comportement de l’application en production.
+Un middleware est un logiciel intermédiaire qui gère la communication et la gestion des données entre différentes applications ou entre la couche serveur et le client.
+Le responsive design est une approche de conception qui permet à un site web de s’adapter à différents types d’écrans et de résolutions.
+Un test unitaire vérifie le comportement d’une petite partie du code de manière isolée pour s’assurer qu’elle renvoie les résultats attendus.
+Un code lisible facilite la compréhension, la maintenance, la collaboration et la réduction des erreurs lors de modifications futures.
+Un pull request est une demande de fusion de modifications apportées sur une branche vers une branche principale, généralement accompagnée d’une révision par les pairs.
+Une interface définit un ensemble de méthodes qu’une classe doit implémenter, assurant ainsi une cohérence dans la manière d’utiliser différents objets.
+En suivant les bonnes pratiques de sécurité telles que la validation des entrées, l’authentification, l’autorisation, le chiffrement et en effectuant des tests de sécurité réguliers.
+C’est un modèle de communication où un client envoie des requêtes à un serveur qui traite ces demandes et renvoie les réponses correspondantes.
+L’asynchronisme permet à un programme d’exécuter des opérations en parallèle ou de gérer des tâches en arrière-plan sans bloquer le flux principal d’exécution.
+En suivant les bonnes pratiques de codage, en utilisant des tests automatisés, en documentant le code et en adoptant une architecture modulaire et évolutive.
+Oui, j’aimerais en savoir plus sur les missions qui me seront confiées en alternance et sur la manière dont l’accompagnement et la montée en compétences sont organisés. Aussi, pourriez-vous me parler de l’équipe avec laquelle je travaillerai et des perspectives d’évolution après l’alternance ?
+Oui, avant de conclure, j’aimerais savoir quelles sont les prochaines étapes du processus de recrutement et dans quels délais je pourrais avoir un retour sur ma candidature. Aussi, pourriez-vous me donner un aperçu de l’accompagnement prévu pour les alternants et des opportunités d’évolution après l’alternance ?
+Pour moi, il est essentiel de trouver un équilibre entre vie professionnelle et vie personnelle, car l’un influence directement l’autre. Un bon équilibre permet d’être plus efficace et épanoui au travail, tout en ayant du temps pour se ressourcer et profiter de sa famille. Je suis engagé et investi dans mon travail, mais je veille aussi à gérer mon temps intelligemment pour concilier les deux aspects de ma vie.
+Je suis activement en recherche d’une alternance depuis 1 mois, dans le cadre de ma reconversion en développement web. Après avoir suivi ma formation et acquis de solides bases, je suis maintenant prêt à intégrer une entreprise pour mettre mes compétences en pratique et continuer à progresser.
+J’adopte une approche diversifiée dans ma recherche d’emploi. J’utilise mon réseau professionnel et personnel, ainsi que LinkedIn pour identifier des opportunités. En parallèle, je consulte régulièrement divers sites spécialisés comme France Travail et l’Agefiph. J’effectue également des candidatures spontanées auprès d’entreprises qui correspondent à mon profil et à mes aspirations professionnelles. Cette démarche me permet d’être proactif et d’élargir mes possibilités en ciblant directement des employeurs potentiels.
+Lors de ma formation en développement web et web mobile, nous n'avons pas eu l'opportunité d'effectuer un stage. En effet, notre premier formateur est parti au bout d’un mois et demi, et nous sommes restés sans formateur pendant deux mois. Afin de rattraper ce retard, l’AFPA a préféré annuler le stage pour nous permettre de finaliser l’apprentissage du programme.
+Il est vrai que trouver une alternance peut être un défi, mais je suis en recherche active et j’ai déjà envoyé plusieurs candidatures. J’ai eu quelques premiers échanges avec des entreprises, mais je suis encore en discussion et en réflexion pour identifier le poste qui correspondra le mieux à mon projet professionnel.
+Il est vrai que trouver une alternance peut être un défi, mais je suis en recherche active et j’ai déjà envoyé plusieurs candidatures. J’ai eu quelques premiers échanges avec des entreprises, mais je suis encore en discussion et en réflexion pour identifier le poste qui correspondra le mieux à mon projet professionnel.
+Malheureusement, je ne suis pas en mesure d’effectuer des déplacements professionnels en raison de mes contraintes personnelles. Cependant, je suis totalement disponible et investi pour travailler efficacement sur site ou en télétravail selon les besoins de l’entreprise.
+Je suis disposé à faire des heures supplémentaires si nécessaire, tant que cela respecte mes contraintes liées à ma RQTH. Un mercredi sur deux, selon le lieu de travail, je ne peux pas finir après 11h30, mais je peux reprendre après 18h, et un vendredi sur deux, je ne peux pas terminer plus tard que 16h. En dehors de ces créneaux, je suis flexible et prêt à m’adapter aux besoins de l’entreprise.
+Je suis totalement disponible pour ce poste, à l’exception de deux contraintes liées à ma RQTH. Un mercredi sur deux, en fonction du lieu de travail, je ne peux pas finir après 11h30, mais je peux reprendre après 18h. Et un vendredi sur deux, je ne peux pas terminer plus tard que 16h. En dehors de ces créneaux, je suis flexible et prêt à m’adapter aux besoins de l’entreprise.
