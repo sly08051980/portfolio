@@ -204,23 +204,22 @@
 
               <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
               <script>
-                  emailjs.init("2G3ETHoJ_J3G2aTTR"); 
+        emailjs.init("2G3ETHoJ_J3G2aTTR");
+
 document.getElementById("contact-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
+  const form = this;
+
   grecaptcha.ready(function () {
     grecaptcha.execute('6LckmyorAAAAALirUJBQkEGH_rklqQqEjtF0TxPM', { action: 'submit' }).then(function (token) {
-      // Ajoute le token à un champ caché dans le formulaire
-      const form = document.getElementById("contact-form");
-
       const input = document.createElement('input');
       input.type = 'hidden';
       input.name = 'g-recaptcha-response';
       input.value = token;
       form.appendChild(input);
 
-      // Appel EmailJS
-      emailjs.sendForm("service_57pw2xe", "template_wsfhjqx", this)
+      emailjs.sendForm("service_57pw2xe", "template_wsfhjqx", form)
         .then(() => alert("Message envoyé !"))
         .catch((error) => {
           console.error("Erreur :", error);
