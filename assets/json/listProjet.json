@@ -24,7 +24,7 @@
           
         ],
         "lien": "https://ngravecreations.com",
-"contenu": "<img src=\\\"assets/img/ngrave.png\\\" class=\\\"card-img-top\\\" alt=\\\"ngravecreations\\\">"
+"contenu": "<img src=\"assets/img/ngrave.png\" class=\"card-img-top\" alt=\"ngravecreations\">"
     },
     {
       "titre": "Outil de Visualisation de l'API Pokémon",
@@ -37,7 +37,7 @@
           
         ],
         "lien": "projet/pokemon/index.html",
-        "contenu": "<iframe src=\\\"projet/pokemon/index.html\\\" class=\\\"card-img-top\\\" height=\\\"600\\\"></iframe>"
+        "contenu": "<iframe src=\"projet/pokemon/index.html\" class=\"card-img-top\" height=\"600\"></iframe>"
 
     },
     {
@@ -51,7 +51,7 @@
           
         ],
         "lien": "https://regniersylvain.ngravecreations.com/api/",
-           "contenu": "<iframe src=\\\"https://regniersylvain.ngravecreations.com/api/\\\" class=\\\"card-img-top\\\" height=\\\"600\\\"></iframe>"
+           "contenu": "<iframe src=\"https://regniersylvain.ngravecreations.com/api/\" class=\"card-img-top\" height=\"600\"></iframe>"
         
 
     },
@@ -63,7 +63,7 @@
           "Petit bot programmé pour jouer contre la machine"     
         ],
         "lien": "projet/morpion-main/index.html",
-        "contenu": "<iframe src=\\\"projet/morpion-main/index.html\\\" class=\\\"card-img-top\\\" height=\\\"600\\\"></iframe>"
+        "contenu": "<iframe src=\"projet/morpion-main/index.html\" class=\"card-img-top\" height=\"600\"></iframe>"
     },
     {
       "titre": "Jeu du Pendu",
@@ -72,7 +72,7 @@
       "texteCache": [  
         ],
             "lien": "projet/pendu-main/index.html",
-        "contenu": "<iframe src=\\\"projet/pendu-main/index.html\\\" class=\\\"card-img-top\\\" height=\\\"600\\\"></iframe>"
+        "contenu": "<iframe src=\"projet/pendu-main/index.html\" class=\"card-img-top\" height=\"600\"></iframe>"
     },
     {
       "titre": "Application Android",
@@ -86,7 +86,7 @@
           "Java"
         ],
         "lien": "https://appetize.io/app/b_hn2hvkuof32vcozhtmdd6nfqdq",
-            "contenu": "<img src=\\\"assets/img/appetize.png\\\" class=\\\"card-img-top\\\" alt=\\\"crypto\\\">"
+            "contenu": "<img src=\"assets/img/appetize.png\" class=\"card-img-top\" alt=\"crypto\">"
         
     },
     {
