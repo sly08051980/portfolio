@@ -19,7 +19,7 @@ document.querySelector('tbody').addEventListener('click', function(event) {
        
         if (joueur === 0 && cellule.innerHTML !== "X" && cellule.innerHTML !== "O") {
             cellule.innerHTML = "X";
-            cellule.style.color = "white";
+            cellule.style.color = "black";
             console.log("Humain joue :", cellule.innerHTML);
             joueur = 1; 
             verifierGagnerligne();
