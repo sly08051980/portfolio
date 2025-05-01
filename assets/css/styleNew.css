@@ -93,36 +93,36 @@ footer{
 .gris{
     color: rgb(75, 85, 99);
 }
-  
+.marge10{
+    margin-top: 10em;
+}
+.marge3{
+    margin-top: 3em;
+}
+.fs-60 {
+    font-size: 60px;
+  }
+  .fs-36 {
+    font-size: 36px;
+  }
+  .fs-30{
+    font-size: 30px;
+  }
+  .fs-24 {
+    font-size: 24px;
+  }
+  .fs-20 {
+    font-size: 20px;
+  }
+  .fs-16 {
+    font-size: 16px;
+  }
+  .fs-14 {
+    font-size: 14px;
+  } 
   @media (min-width: 992px) {
     .custom-width {
       width: 40%;
     }
-    .marge10{
-        margin-top: 10em;
-    }
-    .marge3{
-        margin-top: 3em;
-    }
-    .fs-60 {
-        font-size: 60px;
-      }
-      .fs-36 {
-        font-size: 36px;
-      }
-      .fs-30{
-        font-size: 30px;
-      }
-      .fs-24 {
-        font-size: 24px;
-      }
-      .fs-20 {
-        font-size: 20px;
-      }
-      .fs-16 {
-        font-size: 16px;
-      }
-      .fs-14 {
-        font-size: 14px;
-      }
+
   }
