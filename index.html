@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MY7B9KD9CS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MY7B9KD9CS');
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Regnier Sylvain</title>
@@ -35,6 +43,7 @@
 
     <link rel="stylesheet" href="./assets/css/styleNew.css" />
     <script src="assets/js/projet.js"></script>
+    <script src="assets/js/cookies.js"></script>
   </head>
   <body>
     <div class="container">
@@ -229,31 +238,6 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
   });
 });
 
-
-
-
-
-
-
-
-
-                // emailjs.init("2G3ETHoJ_J3G2aTTR"); 
-
-                // document
-                //   .getElementById("contact-form")
-                //   .addEventListener("submit", function (e) {
-                //     e.preventDefault();
-
-                //     emailjs
-                //       .sendForm("service_57pw2xe", "template_wsfhjqx", this)
-                //       .then(() => {
-                //         alert("Message envoyé !");
-                //       })
-                //       .catch((error) => {
-                //         console.error("Erreur :", error);
-                //         alert("Échec de l'envoi.");
-                //       });
-                //   });
               </script>
             </div>
           </div>
@@ -262,5 +246,14 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
       <hr />
       <p>© 2025 Portfolio Regnier Sylvain. Tous droits réservés.</p>
     </footer>
+    <div id="banniere-cookies" class="position-fixed bottom-0 start-0 end-0 p-3 bg-light shadow d-none" style="z-index: 1050;">
+      <div class="d-flex justify-content-between align-items-center flex-column flex-md-row gap-3">
+        <p class="mb-0 fs-14">Ce site utilise des cookies pour garantir la meilleure expérience utilisateur.</p>
+        <div class="d-flex gap-2">
+          <button id="accepter-cookies" class="btn btn-violet rounded-pill fs-14">Accepter</button>
+          <button id="refuser-cookies" class="btn btn-blanc rounded-pill fs-14">Refuser</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
