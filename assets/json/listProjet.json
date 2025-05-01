@@ -1,0 +1,105 @@
+[
+    {
+      "titre": "CV & Chatbot Python",
+      "text": "Chatbot de pré-entretien avec interface web moderne.",
+      "tags": ["Python", "Bootstrap"],
+      "texteCache": [
+          "interface avec Flask",
+          "NLP avec spaCy",
+          "TensorFlow",
+          "JSON"
+        ],
+        "lien": "https://regniersylvain.ngravecreations.com/chatbot/",
+        "telecharger": "assets/img/CV_Sylvain_Regnier_DeveloppeurWeb_Alternance_2025.pdf",
+        "contenu": "<object data=\"https://regniersylvain.ngravecreations.com/chatbot/documents/CV_Sylvain_Regnier_DeveloppeurWeb_Alternance_2025.pdf#toolbar=0\" type=\"application/pdf\" width=\"100%\" height=\"350\"><p>Le PDF ne peut pas être affiché. <a href=\"assets/img/CV_Sylvain_Regnier_DeveloppeurWeb_Alternance_2025.pdf\">Téléchargez le CV ici</a>.</p></object>"
+    
+    },
+    {
+      "titre": "Projet Symfony",
+      "text": "Site e-commerce Symfony avec intégration API PayPal.",
+      "tags": ["Symfony", "Bootstrap","PayPal","Mysql","PHP"],
+      "texteCache": [
+          "API Paypal, Facebook, Twitter, Instagram",
+          "Gestion des rôles"
+          
+        ],
+        "lien": "https://ngravecreations.com",
+"contenu": "<img src=\\\"assets/img/ngrave.png\\\" class=\\\"card-img-top\\\" alt=\\\"ngravecreations\\\">"
+    },
+    {
+      "titre": "Outil de Visualisation de l'API Pokémon",
+      "text": "Utilisation de l'API Pokémon fait en JavaScript.",
+      "tags": ["JavaScript", "API"],
+      "texteCache": [
+          "API Pokémon",
+          "Récupération des données",
+          "Affichage des informations suivant selection"
+          
+        ],
+        "lien": "projet/pokemon/index.html",
+        "contenu": "<iframe src=\\\"projet/pokemon/index.html\\\" class=\\\"card-img-top\\\" height=\\\"600\\\"></iframe>"
+
+    },
+    {
+      "titre": "Création D'une API Pokémons avec NodeJs",
+      "text": "Ajout/recherche dans un fichier JSON.",
+      "tags": ["JavaScript", "API","NodeJs"],
+      "texteCache": [
+          "Création D'API",
+          "Ajouter/supprimer dans l'API",
+          "Affichage des informations"
+          
+        ],
+        "lien": "https://regniersylvain.ngravecreations.com/api/",
+           "contenu": "<iframe src=\\\"https://regniersylvain.ngravecreations.com/api/\\\" class=\\\"card-img-top\\\" height=\\\"600\\\"></iframe>"
+        
+
+    },
+    {
+      "titre": "Jeu du Morpion",
+      "text": "Jeu du morpion en JavaScript",
+      "tags": ["JavaScript"],
+      "texteCache": [
+          "Petit bot programmé pour jouer contre la machine"     
+        ],
+        "lien": "projet/morpion-main/index.html",
+        "contenu": "<iframe src=\\\"projet/morpion-main/index.html\\\" class=\\\"card-img-top\\\" height=\\\"600\\\"></iframe>"
+    },
+    {
+      "titre": "Jeu du Pendu",
+      "text": "Jeu du Pendu en JavaScript",
+      "tags": ["JavaScript"],
+      "texteCache": [  
+        ],
+            "lien": "projet/pendu-main/index.html",
+        "contenu": "<iframe src=\\\"projet/pendu-main/index.html\\\" class=\\\"card-img-top\\\" height=\\\"600\\\"></iframe>"
+    },
+    {
+      "titre": "Application Android",
+      "text": "Affichage en temps réel des cours de cryptomonnaies avec calcul dynamique du portefeuille. L'utilisateur peut ajouter des actifs, les données sont stockées localement dans une base de données SQL sur l'appareil.",
+      "tags": ["Java","MySQL","API"],
+      "texteCache": [  
+          "API Binance/CoinGecko",
+          "CRUD",
+          "réactualisation toutes les 5 secondes",
+          "Widget",
+          "Java"
+        ],
+        "lien": "https://appetize.io/app/b_hn2hvkuof32vcozhtmdd6nfqdq",
+            "contenu": "<img src=\\\"assets/img/appetize.png\\\" class=\\\"card-img-top\\\" alt=\\\"crypto\\\">"
+        
+    },
+    {
+      "titre": "Portfolio",
+      "text": "Une plateforme élégante pour présenter mes différents projets et compétences avec une interface moderne et réactive.",
+      "tags": ["HTML","CSS","Bootstrap","JavaScript"],
+      "texteCache": [  
+          "Design responsive",
+"Animations fluides",
+"Présentations des projets",
+"Google Analytics"
+        ]
+        
+    }
+  
+  ]

@@ -1,0 +1,128 @@
+body {
+    background-color: hsl(224, 76%, 95%);
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  .ml-negative{
+    margin-left: -0.5em;
+  }
+  .btn-violet{
+   background-color:  #6E59A5;
+   color: white;
+  }
+  .btn-violet:hover {
+    background-color: #8c5fd1; 
+    color: white;
+}
+.btn-gris{
+    background-color:  rgb(183, 171, 171);
+    
+   }
+.btn-blanc{
+    border: 1px solid rgb(213, 213, 213);
+}
+.btn-blanc:hover{
+    background-color:  #6E59A5;
+    color: white;
+}
+.bordure{
+    border: none;
+}
+.contour{
+    border: 1px solid rgb(213, 213, 213);
+    margin-left: 1em;
+    margin-right: 1em;
+    
+}
+.arrondie{
+    background-color: hsl(224, 76%, 95%);
+
+}
+footer{
+    background-color: white;
+}
+.icon-circle {
+    width: 32px;
+    height: 32px;
+    background-color: #e0e0e0; /* gris clair */
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  }
+  .violet{
+    color: #6E59A5;
+  }
+  #choix {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .zoom{
+    transition: all 0.3s;
+  }
+  .zoom:hover{
+    transform: scale(1.05);
+  }
+  .custom-width {
+    width: 100%;
+  }
+  .taille12{
+    font-size: 14px;
+}
+.font-400{
+    font-weight: 400;
+}
+.font-500{
+    font-weight: 500;
+}
+.font-600{
+    font-weight: 600;
+}
+.font-700{
+    font-weight: 700;
+}
+.lineh-24{
+    line-height: 24px;
+}
+.lineh-20{
+    line-height: 20px;
+}
+.gris{
+    color: rgb(75, 85, 99);
+}
+  
+  @media (min-width: 992px) {
+    .custom-width {
+      width: 40%;
+    }
+    .marge10{
+        margin-top: 10em;
+    }
+    .marge3{
+        margin-top: 3em;
+    }
+    .fs-60 {
+        font-size: 60px;
+      }
+      .fs-36 {
+        font-size: 36px;
+      }
+      .fs-30{
+        font-size: 30px;
+      }
+      .fs-24 {
+        font-size: 24px;
+      }
+      .fs-20 {
+        font-size: 20px;
+      }
+      .fs-16 {
+        font-size: 16px;
+      }
+      .fs-14 {
+        font-size: 14px;
+      }
+  }
