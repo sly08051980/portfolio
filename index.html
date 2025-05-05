@@ -258,8 +258,16 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        if (window.self !== window.top && window.top.location.hostname === window.location.hostname) {
-          console.warn("🛑 Recursion iframe détectée. Blocage.");
+        let depth = 0;
+        let current = window;
+    
+        while (current !== current.parent) {
+          current = current.parent;
+          depth++;
+        }
+    
+        if (depth > 1) {
+          console.warn("🛑 Iframe recursive détectée (niveau > 1). Blocage.");
           document.body.innerHTML = "<p style='color:red;text-align:center;margin-top:2rem'>Ce site ne peut pas être chargé en boucle.</p>";
           window.stop();
         }
