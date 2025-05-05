@@ -4,3 +4,5 @@ sentence-transformers
 nltk
 numpy
 tqdm
+langdetect
+faiss
