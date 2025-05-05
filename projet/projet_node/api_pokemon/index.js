@@ -3,8 +3,19 @@ const app = express();
 const fs = require("fs");
 const bodyParser = require("body-parser");
 const jsonPokemon = require("./pokemonList.json");
+const rateLimit = require("express-rate-limit");
 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 min
+  max: 100, // max 100 requêtes par IP
+});
+
+app.use(limiter);
 // Middleware
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.originalUrl}`);
+  next();
+});
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(bodyParser.json());
