@@ -44,6 +44,14 @@
     <link rel="stylesheet" href="./assets/css/styleNew.css" />
     <script src="assets/js/projet.js"></script>
     <script src="assets/js/cookies.js"></script>
+    <script>
+     
+      if (window.self !== window.top && window.top.location.hostname === window.location.hostname) {
+        console.warn("🛑 Recursion iframe détectée. Blocage.");
+        document.body.innerHTML = "<p style='color:red;text-align:center;margin-top:2rem'>Ce site ne peut pas être chargé en boucle.</p>";
+        window.stop();
+      }
+    </script>
   </head>
   <body>
     <div class="container">
