@@ -37,7 +37,7 @@
           
         ],
         "lien": "projet/pokemon/index.html",
-        "contenu": ""
+        "contenu": "<iframe src=\"projet/pokemon/index.html\" class=\"card-img-top\" height=\"600\"></iframe>"
 
     },
     {
@@ -51,7 +51,7 @@
           
         ],
         "lien": "https://regniersylvain.ngravecreations.com/api/",
-           "contenu": ""
+           "contenu": "<iframe src=\"https://regniersylvain.ngravecreations.com/api/\" class=\"card-img-top\" height=\"600\"></iframe>"
         
 
     },
@@ -63,7 +63,7 @@
           "Petit bot programmé pour jouer contre la machine"     
         ],
         "lien": "projet/morpion-main/index.html",
-        "contenu": ""
+        "contenu": "<iframe src=\"projet/morpion-main/index.html\" class=\"card-img-top\" height=\"600\"></iframe>"
     },
     {
       "titre": "Jeu du Pendu",
@@ -72,7 +72,7 @@
       "texteCache": [  
         ],
             "lien": "projet/pendu-main/index.html",
-        "contenu": "<"
+        "contenu": "<iframe src=\"projet/pendu-main/index.html\" class=\"card-img-top\" height=\"600\"></iframe>"
     },
     {
       "titre": "Application Android",
@@ -99,7 +99,7 @@
 "Présentations des projets",
 "Google Analytics"
         ],
-        "contenu": ""
+        "contenu": "<iframe src=\"index.html\" class=\"card-img-top\" height=\"600\"></iframe>"
         
     }
   
